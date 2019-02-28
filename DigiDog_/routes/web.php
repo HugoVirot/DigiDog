@@ -12,6 +12,21 @@
 */
 
 Route::get('/', function () {
-    echo "Bonjour";
     return view('welcome');
+});
+
+Route::get('/accueil', function () {
+    return view('accueil');
+});
+
+Route::get('/catalogue', function () {
+    return view('catalogue');
+});
+
+Route::get('/ficheproduit', function () {
+    return view('ficheproduit');
+});
+
+Route::get('/panier', function () {
+    return view('panier');
 });
