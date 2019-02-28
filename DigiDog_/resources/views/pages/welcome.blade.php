@@ -1,5 +1,11 @@
 @extends ('layout.app')
 
+@section('title')
+    DigiDog : objets connectés pour chien
+@endsection
+
+
+
 @section('content')
-    <p>This is my body content.</p>
+    <p>Bienvenue chez DigiDog !</p>
 @endsection

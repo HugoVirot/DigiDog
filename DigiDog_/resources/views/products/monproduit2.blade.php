@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
+@extends ('layout.app')
 
-<head>
-
-</head>
-
-<body>
-
-MON PRODUIT 2
-
-
-</body>
+@section('title')
+    Produit 2
+@endsection
 
 
 
-
-</html>
+@section('content')
+    <p>Produit 2</p>
+@endsection

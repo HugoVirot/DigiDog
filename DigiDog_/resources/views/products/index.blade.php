@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html>
+@extends ('layout.app')
 
-<head>
+@section('title')
+    Catalogue
+@endsection
 
-</head>
-
-<body>
-
-CATALOGUE
-<a href="catalogue/monproduit">mon produit</a>
-<a href="catalogue/monproduit2">mon produit 2</a>
-
-</body>
-
-
-
-
-</html>
+@section('content')
+    <p>Produit 1</p>
+    <p>Produit 2</p>
+    <p>Produit 3</p>
+@endsection
