@@ -11,22 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "HomeController@index");
 
-Route::get('/accueil', function () {
-    return view('accueil');
-});
+Route::get('/panier', "CartController@index");
 
-Route::get('/catalogue', function () {
-    return view('catalogue');
-});
+Route::get('/catalogue', "ProductController@index");
 
-Route::get('/ficheproduit', function () {
-    return view('ficheproduit');
-});
-
-Route::get('/panier', function () {
-    return view('panier');
-});
+Route::get('/catalogue/{nom}', "ProductController@show");

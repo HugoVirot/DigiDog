@@ -7,7 +7,7 @@
 
 <body>
 
-CATALOGUE
+MON PRODUIT
 
 
 </body>
