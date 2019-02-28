@@ -1,11 +1,11 @@
 @extends ('layout.app')
 
 @section('title')
-    Produit 1
+    Mon Compte
 @endsection
 
 
 
 @section('content')
-    <p>Produit 1</p>
+    <p>Mon Compte</p>
 @endsection

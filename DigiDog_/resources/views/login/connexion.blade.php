@@ -1,11 +1,11 @@
 @extends ('layout.app')
 
 @section('title')
-    Produit 1
+    Connexion
 @endsection
 
 
 
 @section('content')
-    <p>Produit 1</p>
+    <p>Connexion</p>
 @endsection
