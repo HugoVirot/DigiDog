@@ -1,2 +1,0 @@
-# DigiDog
-Boutique en ligne
