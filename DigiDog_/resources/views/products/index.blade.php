@@ -7,8 +7,9 @@
 
 <body>
 
-FICHE PRODUIT
-
+CATALOGUE
+<a href="catalogue/monproduit">mon produit</a>
+<a href="catalogue/monproduit2">mon produit 2</a>
 
 </body>
 

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function index () {
-        return view('panier');
+    public function panier () {
+        return view('cart/panier');
     }
 }

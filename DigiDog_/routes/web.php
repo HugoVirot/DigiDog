@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', "HomeController@index");
+Route::get('/', "HomeController@accueil");
 
-Route::get('/panier', "CartController@index");
+Route::get('/panier', "CartController@panier");
 
 Route::get('/catalogue', "ProductController@index");
 
