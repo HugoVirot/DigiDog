@@ -12,6 +12,48 @@ header {
   color: white;
 }
 
+footer {
+  background-color: #d9d9d9;
+}
+
+.picto {
+  width: 80px;
+  height: 80px;
+  color: white;
+
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  /* à adapter */
+}
+
+.instagram {
+  width: 40px;
+  height: 40px;
+}
+
+.twitter {
+  width: 40px;
+  height: 40px;
+}
+
+.facebook {
+  width: 40px;
+  height: 40px;
+}
+
+.youtube {
+  width: 40px;
+  height: 40px;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
