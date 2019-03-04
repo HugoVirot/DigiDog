@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py -3 bg-success mt-5">
+<footer class="footer mt-auto py -3 bg-success mt-5 pt-3">
 
 
     <div class="container-fluid">
@@ -44,6 +44,7 @@
             </div>
 
             <div class="col-md-3 text-center align-self-center">
+                <p>Suivez nous sur les réseaux sociaux :</p>
                 <a target="_blank" href="_http://pinterest.com">
                     <img src="images/pinterest.png" class="pinterest">
                 </a>
@@ -62,7 +63,11 @@
                 <a target="_blank" href="_http://youtube.com">
                     <img src="images/youtube.png" class="youtube">
                 </a>
-
+                <br>
+                <p class="mt-2">Paiement sécurisé</p>
+                <img src="images/cards.png" class="cards"/>
+                <img src="images/paypal.png" class="paypal"/>
+                <img src="images/bitcoin.png" class="bitcoin"/>
 
             </div>
 
