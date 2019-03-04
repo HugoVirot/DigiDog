@@ -1,135 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Bentham);@charset "UTF-8";
 
-.logo-header {
-  width: 500px;
-}
-
-.menu a {
-  color: white;
-}
-
-footer {
-  background-color: #d9d9d9;
-}
-
-ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-li {
-  margin-bottom: 15px;
-  /* à adapter */
-}
-
-.instagram {
-  width: 40px;
-  height: 40px;
-}
-
-.twitter {
-  width: 40px;
-  height: 40px;
-}
-
-.facebook {
-  width: 40px;
-  height: 40px;
-}
-
-.youtube {
-  width: 40px;
-  height: 40px;
-}
-
-footer {
-  background-color: #d9d9d9;
-}
-
-.picto {
-  width: 80px;
-  height: 80px;
-  color: white;
-
-}
-
-ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-li {
-  margin-bottom: 15px;
-  /* à adapter */
-}
-
-.instagram {
-  width: 40px;
-  height: 40px;
-}
-
-.twitter {
-  width: 40px;
-  height: 40px;
-}
-
-.facebook {
-  width: 40px;
-  height: 40px;
-}
-
-.youtube {
-  width: 40px;
-  height: 40px;
-}
-
-footer {
-  background-color: #d9d9d9;
-}
-
-ul {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-li {
-  margin-bottom: 15px;
-  /* à adapter */
-}
-
-.instagram {
-  width: 40px;
-  height: 40px;
-}
-
-.twitter {
-  width: 40px;
-  height: 40px;
-}
-
-.facebook {
-  width: 40px;
-  height: 40px;
-}
-
-.youtube {
-  width: 40px;
-  height: 40px;
-}
-
-.pinterest {
-  width: 40px;
-  height: 40px;
-}
-
-.logo-footer {
-  width: 30px;
-  height: 30px;
-}
-
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10785,9 +10655,57 @@ a.text-dark:focus {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.logo-header {
+  width: 500px;
+}
+
+.menu a {
+  color: white;
+}
+
+footer {
+  background-color: #d9d9d9;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  /* à adapter */
+}
+
+.instagram {
+  width: 40px;
+  height: 40px;
+}
+
+.twitter {
+  width: 40px;
+  height: 40px;
+}
+
+.facebook {
+  width: 40px;
+  height: 40px;
+}
+
+.youtube {
+  width: 40px;
+  height: 40px;
+}
+
+.pinterest {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-footer {
+  width: 30px;
+  height: 30px;
 }
 
 h1 {

@@ -33,7 +33,7 @@
             Facilitez-vous la vie, et celle de votre compagnon à quatre pattes !</p>
         </article>
 
-        <article class="container-fluid w-100% bg-info text-white mt-3 mb-3">
+        <article id="garanties" class="container-fluid w-100% bg-info text-white mt-3 mb-3">
             <div class="row align-items-center"><h3>Vos Garanties</h3>
             </div>
             <div class="row">
