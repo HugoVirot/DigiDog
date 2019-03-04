@@ -11,10 +11,10 @@
 
         <!-- CAROUSEL-->
         <article>
-            <div id="carouselaccueil" class="carousel slide" data-ride="carousel">
+            <div id="carouselaccueil" class="carousel slide pt-3 pb-3" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="traceur.jpg" class="d-block w-100" alt="traceur">
+                        <img src="/images/traceur.jpg" class="d-block w-100" alt="traceur">
                     </div>
                     <div class="carousel-item">
                         <img src="..." class="d-block w-100" alt="...">
@@ -27,22 +27,26 @@
         </article>
 
         <!--TEXTE PRESENTATION-->
-        <article class="container">
-        <h2>VOTRE CHIEN AUSSI AIME LA TECHNOLOGIE !</h2>
+        <article class="container text-center">
+        <h3>VOTRE CHIEN AUSSI AIME LA TECHNOLOGIE !</h3>
         <p>DigiDog : un large choix d'objets connectés pour chien.
             Facilitez-vous la vie, et celle de votre compagnon à quatre pattes !</p>
         </article>
 
-        <article class="container-fluid w-100 bg-info text-white">
-            <div class="row"><h3>Vos Garanties</h3></div>
+        <article class="container-fluid w-100% bg-info text-white mt-3 mb-3">
+            <div class="row align-items-center"><h3>Vos Garanties</h3>
+            </div>
             <div class="row">
                 <div class="col-3">
+                    <img class="picto" src="/images/coq.png">
                     <p>100% made in France</p>
                 </div>
                 <div class="col-3">
+                    <img class="picto" src="/images/camion.png">
                     <p>Livraison en 48h</p>
                 </div>
                 <div class="col-3">
+                    <img class="picto" src="/images/cle.png">
                     <p>Garantie 2 ans</p>
                 </div>
             </div>
@@ -54,10 +58,10 @@
             </div>
             <div class="row">
                 <div class="col-4">
-                    <img src="traceur.jpg" alt="santé">
+                    <img src="/images/sante.jpg" alt="santé">
                 </div>
                 <div class="col-4">
-                    <img src="DigiDog_/public/images/confort.jpg" alt="confort">
+                    <img class="width: 50%" src="imags/confort.jpg" alt="confort">
                 </div>
             </div>
         </article>

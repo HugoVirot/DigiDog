@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', "PageController@accueil");
+Route::get('/', 'PageController@accueil');
 
 Route::get('/panier', "CartController@panier");
 
