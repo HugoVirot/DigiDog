@@ -10674,54 +10674,14 @@ li {
   /* à adapter */
 }
 
-.instagram {
-  width: 40px;
-  height: 40px;
-}
-
-.twitter {
-  width: 40px;
-  height: 40px;
-}
-
-.facebook {
-  width: 40px;
-  height: 40px;
-}
-
-.youtube {
-  width: 40px;
-  height: 40px;
-}
-
-.pinterest {
-  width: 40px;
-  height: 40px;
-}
-
-.logo-footer {
-  width: 30px;
-  height: 30px;
-}
-
-.bitcoin {
-  width: 40px;
-  height: 40px;
-}
-
-.cards {
-  width: 40px;
-  height: 40px;
-}
-
-.paypal {
+.icon {
   width: 40px;
   height: 40px;
 }
 
 .picto {
-  width: 100px;
-  heigth: 100px;
+  width: 120px;
+  heigth: 120px;
   color: white;
 }
 
@@ -10729,20 +10689,103 @@ li {
   background-color: #32beff;
 }
 
+.categories {
+  position: relative;
+}
+
 .imagescategories {
-  height: 350px;
-  witdh: 400px;
+  height: 300px;
+  width: 480px;
+}
+
+.nomscategories {
+  background-color: black;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 1;
+  color: white;
+  left: 30px;
+  bottom: 10px;
+  font-weight: bold;
 }
 
 #textedigidog {
+  color: #59114d;
   font-size: large;
+}
+
+h2,
+h3 {
+  color: #59114d;
+}
+
+#vosgaranties {
+  color: white;
 }
 
 h3 {
   color: #59114d;
 }
 
+.meilleuresventes h4 {
+  color: #59114d;
+}
+
+.texte1 {
+  background-color: black;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: white;
+  bottom: 20px;
+  right: 60px;
+  position: absolute;
+}
+
+.texte2 {
+  background-color: black;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: white;
+  top: 20px;
+  left: 230px;
+  position: absolute;
+}
+
+.carousel {
+  position: relative;
+  text-align: center;
+}
+
+#description {
+  border: 3px solid #59114d;
+  color: #59114d;
+  padding: 10px;
+}
+
+p {
+  font-size: large;
+}
+
+.spacer {
+  padding: 5px;
+  padding-top: 10px;
+}
+
+.meilleuresventes {
+  border: 3px solid #59114d;
+}
+
+.imagesventes {
+  width: 200px;
+  heigth: 200px;
+}
+
 .img_categorie {
+  width: 150px;
+  height: 150px;
+}
+
+.img_catalogue {
   width: 150px;
   height: 150px;
 }
