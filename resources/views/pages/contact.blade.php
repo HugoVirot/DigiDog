@@ -1,7 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: dechene
- * Date: 05/03/19
- * Time: 15:44
- */
+@extends ('layout.app')
+
+@section('title')
+    Contact
+@endsection
+
+
+
+@section('content')
+
+@endsection
