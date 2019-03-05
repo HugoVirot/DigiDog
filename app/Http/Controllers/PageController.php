@@ -10,4 +10,9 @@ class PageController extends Controller
     {
         return view('pages/welcome');
     }
+
+    public function sav()
+    {
+        return view('pages/sav');
+    }
 }
