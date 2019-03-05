@@ -7,11 +7,11 @@
 
 
 @section('content')
-    <div class="container">
+    <main class="container">
 
         <!-- CAROUSEL-->
         <article>
-            <div id="carouselaccueil" class="carousel slide pt-3 pb-3" data-ride="carousel">
+            <div id="carouselaccueil" class="carousel slide pb-3" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="{{ asset("images/distributeur.jpg") }}" class="d-block w-100" alt="distributeur">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="{{ asset("images/chien2.jpg") }}" class="d-block w-100" alt="capteur">
-                        <div class="texte2"><h1><span class="spacer"></span>Découvrez le capteur d'activité<span
+                        <div class="texte2"><h1><span class="spacer"></span>Découvrez le capteur d'activité !<span
                                         class="spacer"></span></h1></div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
         </article>
 
         <!--TEXTE PRESENTATION-->
-        <article class="container-fluid text-center">
+        <article class="text-center no-gutters">
             <h3>VOTRE CHIEN AUSSI AIME LA TECHNOLOGIE !</h3>
             <div id="description">
                 <p id="textedigidog">DigiDog : un large choix d'objets connectés pour chien.<br>
@@ -65,7 +65,7 @@
             <div class="row justify-content-center">
                 <h2>Catégories</h2>
             </div>
-            <div class="categories row container">
+            <div class="ligneimagescat categories row container no-gutters">
                 <div class="col-6">
                     <img class="imagescategories" src="{{ asset("images/chiendansleau.jpg") }}" alt="chiendansleau">
                     <div class="nomscategories"><h4>Traceurs GPS</h4></div>
@@ -75,7 +75,7 @@
                     <div class="nomscategories"><h4>Caméras connectées</h4></div>
                 </div>
             </div>
-            <div class="categories row container mt-2">
+            <div class="ligneimagescat categories row container  no-gutters mt-2">
                 <div class="col-6">
                     <img class="imagescategories" src="{{ asset("images/chienquicourt.jpg") }}" alt="chienquicourt">
                     <div class="nomscategories"><h4>Capteurs d'activité</h4></div>
@@ -108,5 +108,24 @@
                     </div>
                 </div>
         </article>
-    </div>
+        <article class="avisclients">
+            <div class="row justify-content-center">
+                <h2> Avis Clients</h2>
+            </div>
+            <div class="row text-center">
+                <div class="col-4">
+                    <h5 class="nomclient">Robertdu26</h5>
+                    <p>Absolument génial, j'ai pris le capteur d'activité et je suis ravi de mon achat !</p>
+                </div>
+                <div class="col-4">
+                    <h5 class="nomclient">Jean-Paul1975</h5>
+                    <p>Le meilleur site pour faire plaisir à nos petits toutous</p>
+                </div>
+                <div class="col-4">
+                    <h5 class="nomclient">Isabellelaplusbelle</h5>
+                    <p>Livraison rapide, produits fonctionnels, je recommande !</p>
+                </div>
+            </div>
+        </article>
+    </main>
 @endsection
