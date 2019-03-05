@@ -1,26 +1,106 @@
 .picto {
-    width : 100px;
-    heigth: 100px;
-    color: white;
+  width: 120px;
+  heigth: 120px;
+  color: white;
 }
 
 #garanties {
-    background-color: $primary;
+  background-color: $primary;
 
+}
+
+.categories {
+  position : relative;
 }
 
 .imagescategories {
-    height: 350px;
-    witdh: 400px;
+  height: 300px;
+  width: 480px;
 }
 
+.nomscategories {
+  background-color: black;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 1;
+  color: white;
+  left : 30px;
+  bottom : 10px;
+  font-weight: bold;
+
+}
 
 #textedigidog {
+  color: $secondary;
+  font-size: large;
 
-    font-size: large;
+}
 
+h2, h3 {
+  color :$secondary;
+}
+
+#vosgaranties {
+  color: white;
 }
 
 h3 {
-    color: $secondary;
+  color: $secondary;
+}
+
+.meilleuresventes h4 {
+  color: $secondary
+}
+
+
+.texte1 {
+  background-color: black;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: white;
+  bottom: 20px;
+  right: 60px;
+  position: absolute;
+}
+
+.texte2 {
+  background-color: black;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: white;
+  top: 20px;
+  left : 230px;
+  position: absolute;
+}
+
+.carousel {
+  position: relative;
+  text-align: center;
+
+}
+
+#description {
+  border : 3px solid $secondary;
+  color : $secondary;
+  padding : 10px;
+}
+
+p {
+  font-size : large;
+}
+
+.spacer {
+  padding: 5px;
+  padding-top: 10px;
+}
+
+.meilleuresventes {
+  //background-color: $primary;
+  border : 3px solid $secondary;
+
+}
+
+.imagesventes {
+  width: 200px;
+  heigth: 200px;
 }
