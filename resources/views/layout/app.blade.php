@@ -10,7 +10,9 @@
 <body class="d-flex flex-column h-100">
     @include('layout.header')
 
+
         @yield('content')
+
 
     @include('layout.footer')
 </body>
