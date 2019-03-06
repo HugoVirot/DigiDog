@@ -1,0 +1,24 @@
+h1 {
+  z-index: 1;
+  color: black;
+  bottom: 5px;
+  left :640px;
+  position: absolute;
+  font-size: 70px;
+}
+
+#sav {
+  position : relative;
+}
+
+#sav img {
+  height: 550px;
+  width : 1000px;
+  border : 3px solid black;
+
+}
+
+#numero {
+  font-weight: bolder;
+  color :$primary;
+}
