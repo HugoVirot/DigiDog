@@ -2,29 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use Illuminate\Http\Request;
-use DB;
-
+use App\Product;
 class ProductController extends Controller
 {
-    public function index()
-    {
-        //$products = DB::select('select * from products ');
-        //$products = Product::all();
-        //$products = Product::orderBy('nom', 'ASC')->get();
-         $products = Product::orderBy('prix','ASC')->get();
+    public function index () {
+        $products = Product::all();
 
         return view('products/index', ['products' => $products]);
     }
 
-    public function show($id)
-    {
-        /*$product = DB::select('select * from products where id = :id', ['id'=>$id]);
-        $product = $product[0];*/
-        $product = Product::where('id',$id)->get();
+    public function show($nom) {
+        $product = Product::where('nom',$nom)->get();
         $product = $product[0];
-
-        return view('products/show',['product' => $product]);
+        return view('products/show', ['product' => $product]);
     }
 }
