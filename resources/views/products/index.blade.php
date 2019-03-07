@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <!-- Listing de tout les produits -->
+    <!-- Listing de tous les produits -->
     <main class=" container mb-5">
         <div class="container row justify-content-between text-center ">
             <div class="mr-3 mt-3">

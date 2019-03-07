@@ -13,4 +13,8 @@ class LoginController extends Controller
     public function show() {
         return view('login/mon_compte');
     }
+
+    public function inscription() {
+        return view ('login/inscription');
+    }
 }
