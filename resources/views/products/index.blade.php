@@ -39,7 +39,7 @@
                 <div class="mr-3 mt-3">
                     <img src="{{ asset("images/tour-connectee.jpg") }}" class="img_catalogue">
                     <p>Produit n°{{ $product->id }}</p>
-                    <h4><a href="{{ '/catalogue/' . $product->nom }}">{{ $product->nom }}</a></h4>
+                    <h4><a href="{{ '/catalogue/' . $product->id }}">{{ $product->nom }}</a></h4>
                     <h4>{{ $product->description }}</h4>
                     <h3>{{$product->prix}}</h3>
                     <p>
