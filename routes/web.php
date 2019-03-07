@@ -25,3 +25,6 @@ Route::get('/login', "LoginController@index");
     'auth'=>'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);*/
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
