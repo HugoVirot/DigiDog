@@ -10,17 +10,17 @@
                         <a href="" target="_blank">FAQ</a>
                     </li>
                     <li>
-                        <a href="" target="_blank">Contact</a>
+                        <a href="http://digidog.local/contact" target="_blank">Contact</a>
                     </li>
                 </ul>
             </div>
             <div class="col-md-3 text-center align-self-center">
                 <ul>
                     <li>
-                        <a href="" target="_blank">Mentions légales</a>
+                        <a href="http://digidog.local/mentions_legales" target="_blank">Mentions légales</a>
                     </li>
                     <li>
-                        <a href="" target="_blank">A propos</a>
+                        <a href="http://digidog.local/a_propos" target="_blank">A propos</a>
                     </li>
                     <li>
                         <a href="" target="_blank">SAV</a>
