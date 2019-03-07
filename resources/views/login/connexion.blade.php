@@ -7,14 +7,13 @@
 @section('content')
     <article id="connexion" class="container-fluid mb-3">
         <div class="row justify-content-center">
-        <img id="chiots" src="{{ asset("images/connexion.jpg") }}">
-        <h1>Connexion</h1>
+        <img class="img-responsive" id="connexion" src="{{ asset("images/connexion.jpg") }}">
         </div>
     </article>
     <article id="formulaire" class="container justify-content-center text-center mb-3">
        <!-- <form></form> -->
     <h3>Entrez vos identifiants</h3>
-        <form method="post" action="">
+        <form method="post" class="mb-4" action="">
             <div class="form-group">
                 <label for="InputEmail">Adresse e-mail</label>
                 <input type="email"  required class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="jeandupont@labrador.fr">
@@ -26,5 +25,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>
+        <div><h3>Pas encore inscrit ?</h3>
+        <a href="/inscription"><button class="btn btn-primary">Je crée mon compte</button></a>
+        </div>
     </article>
 @endsection
