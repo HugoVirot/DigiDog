@@ -16,7 +16,7 @@
                 <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
                     <a class="nav-link" href="/">Accueil</a>
                     <a class="nav-link" href="/catalogue">Catalogue</a>
-                    <a class="nav-link" href="#">Panier</a>
+                    <a class="nav-link" href="/panier">Panier</a>
                     <a class="nav-link" href="#">Connexion</a>
                     <a class="nav-link" href="#">A propos</a>
                 </div>

@@ -1,7 +1,7 @@
 @extends ('layout.app')
 
 @section('title')
-    doggystyle gps
+   {{ $product->nom }}
 @endsection
 
 
@@ -11,32 +11,19 @@
     <div class="container mb-5">
         <div class="row mb-5">
             <div class="col-md-6 mt-2">
-                <img src="{{ asset('images/photo_produit.jpeg') }}" class="photo_produit ">
+                <img src="{{ asset("images/$product->image") }}" class="img_produit ">
             </div>
 
             <div class="col-md-6">
-                <h1>Doggystyle GPS</h1>
-                <h2>Traceur</h2>
-                <h3>49,00 € + frais de livraison</h3>
-                <ul>
-                    <li>
-                        <p>Suivez l'emplacement exact de votre animal de compagnie</p>
-                    </li>
-                    <li>
-                        <p>Clôture virtuelle avec alertes smartphone</p>
-                    </li>
-                    <li>
-                        <p>Convient aux colliers d'une épaisseur de 5 mm au maximum</p>
-                    </li>
-                </ul>
+                <h1>{{ $product->nom }}</h1>
+                <h2>{{ $product->categorie }}</h2>
+                <h3>{{ $product->prix }} € + frais de livraison</h3>
 
-                <p>Le collier GPS vous permet de localiser votre animal de compagnie où qu'il soit et à n'importe quel
-                    moment. Suivez l'emplacement exact de votre chien directement sur votre smartphone ou sur n'importe
-                    quel navigateur. </p>
+                <p>{{ $product->description }}</p>
                 <div class="form-inline">
-                    <input class="form-control mr-3" type="number" id="tentacles" name="tentacles"
-                           min="0" max="50">
-                    <button type="button" class="btn btn-danger">Ajoutez au panier</button>
+                    <input class="form-control mr-3" value="1" type="number" id="tentacles" name="tentacles"
+                           min="0" max="10">
+                    <button type="button" class="btn btn-primary">Ajoutez au panier</button>
                 </div>
 
 
@@ -68,6 +55,5 @@
 
         </div>
     </div>
-
 
 @endsection
