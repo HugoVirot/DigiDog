@@ -13,7 +13,7 @@ class ProductController extends Controller
         //$products = DB::select('select * from products ');
         //$products = Product::all();
         //$products = Product::orderBy('nom', 'ASC')->get();
-         $products = Product::orderBy('prix','ASC')->get();
+         $products = Product::orderBy('price','ASC')->get();
 
         return view('products/index', ['products' => $products]);
     }

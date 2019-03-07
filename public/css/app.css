@@ -10686,7 +10686,11 @@ li {
 }
 
 #garanties {
-  background-color: #32beff;
+  border: 3px solid #32beff;
+}
+
+#garanties p {
+  color: #32beff;
 }
 
 .categories {
@@ -10694,8 +10698,8 @@ li {
 }
 
 .imagescategories {
-  height: 300px;
-  width: 480px;
+  height: 330px;
+  width: 510px;
 }
 
 .nomscategories {
@@ -10720,7 +10724,7 @@ h3 {
 }
 
 #vosgaranties {
-  color: white;
+  color: #32beff;
 }
 
 h3 {
@@ -10778,6 +10782,20 @@ p {
 .imagesventes {
   width: 200px;
   heigth: 200px;
+}
+
+.avisclients {
+  border: 3px solid #32beff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.avisclients h5 {
+  color: #32beff;
+}
+
+.ligneimagescat {
+  text-align: center;
 }
 
 .img_categorie {
