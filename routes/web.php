@@ -17,6 +17,11 @@ Route::get('/panier', "CartController@panier");
 
 Route::get('/catalogue', "ProductController@index");
 
-Route::get('/catalogue/{nom}', "ProductController@show");
+Route::get('/catalogue/{id}', "ProductController@show");
 
 Route::get('/login', "LoginController@index");
+
+/*Route::controllers([
+    'auth'=>'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);*/
