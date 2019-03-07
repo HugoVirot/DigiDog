@@ -11,28 +11,34 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('products')->insert([
-            'nom' => "Produit 1",
-            'image' => "tour-connectee.jpg",
-            'description' => "Description du produit 1",
-            'prix' => "100",
-            'poids' => "200",
+        DB::table("products")->insert([
+            "nom" => "collier gps",
+            "description" => "utile pour suivre mon chien à la trace",
+            "prix" => 47,
+            "stock"=>5,
+            "categorie"=>1,
+            "images"=>"collier.jpg",
+
         ]);
 
-        DB::table('products')->insert([
-            'nom' => "Produit 2",
-            'image' => "traceur.jpg",
-            'description' => "Description du produit 2",
-            'prix' => "300",
-            'poids' => "400",
+        DB::table("products")->insert([
+            "nom" => "gamelle ",
+            "description" => "régule son apétit",
+            "prix" => 45,
+            "stock"=>4,
+            "categorie"=>1,
+            "images"=>"gamelle.jpg",
+
         ]);
 
-        DB::table('products')->insert([
-            'nom' => "Produit 3",
-            'image' => "sante.jpg",
-            'description' => "Description du produit 3",
-            'prix' => "500",
-            'poids' => "600",
+        DB::table("products")->insert([
+            "nom" => "panier",
+            "description" => "confortable",
+            "prix" => 35,
+            "stock"=>6,
+            "categorie"=>1,
+            "images"=>"panier.jpg",
+
         ]);
     }
 }

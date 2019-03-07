@@ -1,7 +1,7 @@
 @extends ('layout.app')
 
 @section('title')
-   {{ $product->nom }}
+    wafwaf gps
 @endsection
 
 
@@ -11,19 +11,19 @@
     <div class="container mb-5">
         <div class="row mb-5">
             <div class="col-md-6 mt-2">
-                <img src="{{ asset("images/$product->image") }}" class="img_produit ">
+                <img src="{{ asset('images/photo_produit.jpeg') }}" class="photo_produit ">
             </div>
 
             <div class="col-md-6">
                 <h1>{{ $product->nom }}</h1>
-                <h2>{{ $product->categorie }}</h2>
+                <h2>Traceur</h2>
                 <h3>{{ $product->prix }} € + frais de livraison</h3>
 
                 <p>{{ $product->description }}</p>
                 <div class="form-inline">
-                    <input class="form-control mr-3" value="1" type="number" id="tentacles" name="tentacles"
-                           min="0" max="10">
-                    <button type="button" class="btn btn-primary">Ajoutez au panier</button>
+                    <input class="form-control mr-3" type="number" id="tentacles" name="tentacles"
+                           min="0" max="50">
+                    <button class="btn btn-primary"  type="button" class="btn btn-danger">Ajoutez au panier</button>
                 </div>
 
 
@@ -36,7 +36,7 @@
                 <h4>Excellent produit pour mon chien !</h4>
                 <p>"Un parfait mélange de précision et d’autonomie de la batterie. Bien sûr on a aussi l’option de Suivi
                     en Direct..... qui nous dit, comme le nom le dit ou est ton animal en ce moment."</p>
-                <p>Marlene, 33 ans, tain l'Hermitage.</p>
+                <p>Marlene, 33 ans, Tain l'Hermitage.</p>
             </div>
             <div class="col-md-4 text-center align-self-center">
                 <h4>Trés bon gps</h4>
@@ -55,5 +55,6 @@
 
         </div>
     </div>
+
 
 @endsection
