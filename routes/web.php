@@ -38,6 +38,7 @@ Route::get('/contact', "PageController@contact");
 
 Route::get('/recrutement', "PageController@recrutement");
 
+Route::get('/faq', "PageController@faq");
 
 Route::get('/mentions_legales', "PageController@mentions_legales");
 

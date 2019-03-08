@@ -26,10 +26,16 @@ class PageController extends Controller
     }
     public function a_propos()
     {
-        return view('pages/a_propos');
+        return view('pages.a_propos');
     }
     public function recrutement()
     {
         return view('pages/recrutement');
+
+    }
+    public function faq()
+    {
+        return view('pages/faq');
+
     }
 }
