@@ -17,8 +17,8 @@
                     <a class="nav-link" href="/">Accueil</a>
                     <a class="nav-link" href="/catalogue">Catalogue</a>
                     <a class="nav-link" href="/panier">Panier</a>
-                    <a class="nav-link" href="#">Connexion</a>
-                    <a class="nav-link" href="#">A propos</a>
+                    <a class="nav-link" href="/connexion">Connexion</a>
+                    <a class="nav-link" href="a_propos">A propos</a>
                 </div>
             </nav>
         </div>

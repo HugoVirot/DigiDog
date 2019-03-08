@@ -23,10 +23,10 @@
                 <label for="InputPassword">Mot de passe</label>
                 <input type="password" required class="form-control" id="InputPassword" placeholder="********">
             </div>
-            <button type="submit" class="btn btn-primary">Valider</button>
+            <button type="submit" class="btn btn-primary-bis">Valider</button>
         </form>
         <div><h3>Pas encore inscrit ?</h3>
-        <a href="/inscription"><button class="btn btn-primary">Je crée mon compte</button></a>
+        <a href="/inscription"><button class="btn btn-primary-bis">Je crée mon compte</button></a>
         </div>
     </article>
 @endsection

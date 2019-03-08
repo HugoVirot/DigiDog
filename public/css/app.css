@@ -10663,6 +10663,15 @@ a.text-dark:focus {
   color: white;
 }
 
+.btn-primary-bis {
+  color: #212529;
+  border-color: #32beff;
+}
+
+.btn-primary-bis:hover {
+  background-color: #32beff;
+}
+
 ul {
   list-style: none;
   margin-left: 0;
@@ -10811,5 +10820,48 @@ p {
 .img_produit {
   width: 500px;
   height: 500px;
+}
+
+#connexion {
+  max-width: 900px;
+  max-height: 600px;
+  border-radius: 20px;
+}
+
+#formulaire {
+  max-width: 500px;
+}
+
+#chiencle {
+  max-width: 1000px;
+  max-height: 550px;
+  border: 3px solid black;
+}
+
+#numero {
+  font-weight: bolder;
+  color: #32beff;
+}
+
+#chiots {
+  max-width: 1000px;
+  max-height: 500px;
+  border-radius: 20px;
+}
+
+#formulaire {
+  border-radius: 5px;
+  padding: 20px;
+  width: 400px;
+}
+
+.nomchamp {
+  font-size: large;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 375px;
 }
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Product;
 
 class ProductTableSeeder extends Seeder
 {
@@ -11,34 +12,18 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("products")->insert([
-            "nom" => "collier gps",
-            "description" => "utile pour suivre mon chien à la trace",
-            "prix" => 47,
-            "stock"=>5,
-            "categorie"=>1,
-            "images"=>"collier.jpg",
+        for ($i = 0; $i < 10; $i++) {
+            $product = new Product;
+            $product->name = Str::random(10);
+            $product->picture = Str::random(10) . '.png';
+            $product->description = Str::random(100);
+            $product->price = rand(0,1000);
+            $product->weight = rand(0,1000);
+            $product->stock = rand(0,1000);
+            $product->category_id = rand(1,4);
+            $product->save();
+        }
 
-        ]);
 
-        DB::table("products")->insert([
-            "nom" => "gamelle ",
-            "description" => "régule son apétit",
-            "prix" => 45,
-            "stock"=>4,
-            "categorie"=>1,
-            "images"=>"gamelle.jpg",
-
-        ]);
-
-        DB::table("products")->insert([
-            "nom" => "panier",
-            "description" => "confortable",
-            "prix" => 35,
-            "stock"=>6,
-            "categorie"=>1,
-            "images"=>"panier.jpg",
-
-        ]);
     }
 }

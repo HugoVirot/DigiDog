@@ -6,8 +6,6 @@
 
 @section('content')
 
-
-
     <!-- Bandeau des catégories -->
     <div class="container-fluid mb-5 bg-success">
         <div class="row text-center mb-4 mt-4">
@@ -37,13 +35,11 @@
             @foreach ($products as $product)
 
                 <div class="mr-3 mt-3">
-                    <img src="{{ asset("images/tour-connectee.jpg") }}" class="img_catalogue">
-                    <p>Produit n°{{ $product->id }}</p>
-                    <h4><a href="{{ '/catalogue/' . $product->id }}">{{ $product->nom }}</a></h4>
-                    <h4>{{ $product->description }}</h4>
-                    <h3>{{$product->prix}}</h3>
+                    <a href="{{ '/catalogue/' . $product->id }}"><img src="{{ asset("images/tour-connectee.jpg") }}" class="img_catalogue"></a>
+                    <h4><a href="{{ '/catalogue/' . $product->id }}">{{ $product->name }}</a></h4>
+                    <h3>{{$product->price}} EUR</h3>
                     <p>
-                        <small> Super produit vraiment  génial</small>
+                        <small>{{ $product->description }}</small>
                     </p>
                 </div>
             @endforeach

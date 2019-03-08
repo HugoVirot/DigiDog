@@ -15,15 +15,15 @@
             </div>
 
             <div class="col-md-6">
-                <h1>{{ $product->nom }}</h1>
-                <h2>Traceur</h2>
-                <h3>{{ $product->prix }} € + frais de livraison</h3>
+                <h1>{{ $product->name }}</h1>
+
+                <h3>{{ $product->price }} € + frais de livraison</h3>
 
                 <p>{{ $product->description }}</p>
                 <div class="form-inline">
                     <input class="form-control mr-3" type="number" id="tentacles" name="tentacles"
                            min="0" max="50">
-                    <button class="btn btn-primary"  type="button" class="btn btn-danger">Ajoutez au panier</button>
+                    <button class="btn btn-primary-bis"  type="button">Ajoutez au panier</button>
                 </div>
 
 
