@@ -8,7 +8,7 @@
 
 @section('content')
     <h1 class="text-secondary text-center">RECRUTEMENT</h1>
-    <h2 class="text-center">Bienvenue sur le site d'emploi DigiDog</h2>
+    <h2 class="text-center">Bienvenue sur le site d'emploi Digijob</h2>
     <div class="container">
         <div class="col-md-12 mb-3 text-center ">
             <img class=" pt-4" src='{{ asset('images/recrutement.jpg') }}' width="500" height="350"
@@ -59,7 +59,7 @@
                 <div class="col-md-4 mt-4 bg-success text-center align-self-center">
                     <p>
                         <b> SAV -LOGISTIQUE</b><br>
-                        -SUPPLY CHAIN - LIVRAISON <br>
+                        SUPPLY CHAIN - LIVRAISON <br>
                         Contrat CDD <br>
                         Statut Employé</p>
                 </div>
