@@ -35,7 +35,8 @@
                 </div>
             </div>
         </div>
-
+        <div class="container">
+            <div class="row mb-5 ">
                 <div class="col-md-12 mt-4 bg-success text-center align-self-center">
                     <p>"Vendez vous des produits pour chats?"<br>
                         Camille. 31 ans. Valence.
@@ -56,18 +57,22 @@
         </div>
         <div class="container">
             <div class="row mb-5 ">
-                <div class="col-md-12 mt-4 bg-success text-center align-self-center">
+            <div class="col-md-12 mt-4 text-center align-self-center">
+                <p>
+                </p>
+
+                <div class="col-md-12 mt-4 text-center align-self-center">
                     <p>"Quel est l'autonomie du distributeur de croquettes?<br>
                         Sophie. 23ans. Tours.
                     </p>
 
                 </div>
-                <div class="col-md-12 mt-4 text-center  align-self-center border-secondary ">
-                    <p>
+                <div class="col-md-12 mt-4 text-center bg-success  align-self-center  ">
+                    <p>ggggggggggggggggggg
                     </p>
                 </div>
 
-
+            </div>
                 </div>
             </div>
         </div>
