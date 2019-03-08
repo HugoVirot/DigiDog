@@ -43,7 +43,7 @@
                     <h4>{{ $product->description }}</h4>
                     <h3>{{$product->prix}}</h3>
                     <p>
-                        <small> Super produit vraiment génial</small>
+                        <small> Super produit vraiment  génial</small>
                     </p>
                 </div>
             @endforeach
