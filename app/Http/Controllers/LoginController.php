@@ -14,6 +14,10 @@ class LoginController extends Controller
         return view('login/mon_compte');
     }
 
+    public function commandes() {
+        return view('login/mes_commandes');
+    }
+
     public function inscription() {
         return view ('login/inscription');
     }
