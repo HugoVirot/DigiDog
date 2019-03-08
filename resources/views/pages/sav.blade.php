@@ -7,8 +7,7 @@
 @section('content')
     <article id="sav" class="container-fluid mb-3">
         <div class="row justify-content-center">
-            <img id="chiencle" src="{{ asset("images/chiencle.jpg") }}">
-            <h1>Service après-vente</h1>
+            <img class="img-responsive" id="chiencle" src="{{ asset("images/chiencle.jpg") }}">
         </div>
     </article>
     <article id="formulaire" class="container justify-content-center text-center mb-3">

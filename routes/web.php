@@ -37,3 +37,5 @@ Route::get('/mentions_legales', "PageController@mentions_legales");
 Route::get('/a_propos', "PageController@a_propos");
 
 Route::get('/sav', "PageController@sav");
+
+Route::get('/inscription', "LoginController@inscription");
