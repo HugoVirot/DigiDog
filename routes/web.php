@@ -19,7 +19,11 @@ Route::get('/catalogue', "ProductController@index");
 
 Route::get('/catalogue/{id}', "ProductController@show");
 
-Route::get('/login', "LoginController@index");
+Route::get('/connexion', "LoginController@index");
+
+Route::get('/mon_compte', "LoginController@show");
+
+Route::get('/mes_commandes', "LoginController@commandes");
 
 /*Route::controllers([
     'auth'=>'Auth\AuthController',
