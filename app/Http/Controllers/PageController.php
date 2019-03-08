@@ -28,4 +28,8 @@ class PageController extends Controller
     {
         return view('pages/a_propos');
     }
+    public function recrutement()
+    {
+        return view('pages/recrutement');
+    }
 }

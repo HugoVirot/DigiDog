@@ -4,7 +4,7 @@
             <div class="col-md-3 text-center align-self-center">
                 <ul>
                     <li>
-                        <a href="" target="_blank">Recrutement</a>
+                        <a href="http://digidog.local/recrutement" target="_blank">Recrutement</a>
                     </li>
                     <li>
                         <a href="" target="_blank">FAQ</a>
@@ -23,7 +23,7 @@
                         <a href="http://digidog.local/a_propos" target="_blank">A propos</a>
                     </li>
                     <li>
-                        <a href="" target="_blank">SAV</a>
+                        <a href="http://digidog.local/sav" target="_blank">SAV</a>
                     </li>
                 </ul>
             </div>

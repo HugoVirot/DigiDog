@@ -32,6 +32,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/contact', "PageController@contact");
 
+Route::get('/recrutement', "PageController@recrutement");
+
+
 Route::get('/mentions_legales', "PageController@mentions_legales");
 
 Route::get('/a_propos', "PageController@a_propos");
