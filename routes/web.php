@@ -20,6 +20,11 @@ Route::get('/catalogue', "ProductController@index");
 Route::get('/catalogue/{product}', "ProductController@show");
 
 Route::get('/connexion', "LoginController@index");
+Route::get('/connexion', "LoginController@index");
+
+Route::get('/mon_compte', "LoginController@show");
+
+Route::get('/mes_commandes', "LoginController@commandes");
 
 /*Route::controllers([
     'auth'=>'Auth\AuthController',
@@ -31,6 +36,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/contact', "PageController@contact");
+
+Route::get('/recrutement', "PageController@recrutement");
+
+Route::get('/faq', "PageController@faq");
 
 Route::get('/mentions_legales', "PageController@mentions_legales");
 
