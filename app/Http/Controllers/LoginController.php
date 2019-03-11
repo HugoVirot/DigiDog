@@ -21,4 +21,8 @@ class LoginController extends Controller
     public function inscription() {
         return view ('login/inscription');
     }
+
+    public function adresses() {
+        return view ('login/mes_adresses');
+    }
 }

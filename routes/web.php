@@ -26,6 +26,8 @@ Route::get('/mon_compte', "LoginController@show");
 
 Route::get('/mes_commandes', "LoginController@commandes");
 
+Route::get('/mes_adresses', "LoginController@adresses");
+
 /*Route::controllers([
     'auth'=>'Auth\AuthController',
     'password' => 'Auth\PasswordController'
