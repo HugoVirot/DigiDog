@@ -16,7 +16,7 @@ class ProductTableSeeder extends Seeder
             $product = new Product;
             $product->name = Str::random(10);
             $product->picture = Str::random(10) . '.png';
-            $product->description = Str::random(100);
+            $product->description = Str::random(20);
             $product->price = rand(0,1000);
             $product->weight = rand(0,1000);
             $product->stock = rand(0,1000);

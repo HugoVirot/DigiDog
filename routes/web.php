@@ -20,6 +20,7 @@ Route::get('/catalogue', "ProductController@index");
 Route::get('/catalogue/{product}', "ProductController@show");
 
 Route::get('/connexion', "LoginController@index");
+
 Route::get('/connexion', "LoginController@index");
 
 Route::get('/mon_compte', "LoginController@show");
@@ -32,10 +33,9 @@ Route::get('/mes_adresses', "LoginController@adresses");
     'auth'=>'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);*/
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::get('/contact', "PageController@contact");
 
@@ -50,3 +50,5 @@ Route::get('/a_propos', "PageController@a_propos");
 Route::get('/sav', "PageController@sav");
 
 Route::get('/inscription', "LoginController@inscription");
+
+Auth::routes();
