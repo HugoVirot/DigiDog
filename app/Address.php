@@ -10,4 +10,14 @@ class Address extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function ordersDelivery()
+    {
+        return $this->hasMany('App\User', 'address_delivery_id');
+    }
+
+    public function ordersBilling()
+    {
+        return $this->hasMany('App\User', 'address_billing_id');
+    }
 }

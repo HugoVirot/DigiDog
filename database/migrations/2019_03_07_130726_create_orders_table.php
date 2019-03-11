@@ -18,10 +18,13 @@ class CreateOrdersTable extends Migration
             $table->string('order_num')->unique();
             $table->dateTime('date');
             $table->bigInteger('user_id', false, true);
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->bigInteger('address_delivery', false, true);
-            $table->bigInteger('address_billing', false, true);
+            $table->bigInteger('address_delivery_id', false, true);
+            $table->bigInteger('address_billing_id', false, true);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('address_delivery_id')->references('id')->on('addresses');
+            $table->foreign('address_billing_id')->references('id')->on('addresses');
         });
     }
 

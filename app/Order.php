@@ -15,4 +15,14 @@ class Order extends Model
     {
         return $this->belongsToMany('App\Product');
     }
+
+    public function addressDelivery()
+    {
+        return $this->belongsTo('App\Address', 'address_delivery_id');
+    }
+
+    public function addressBilling()
+    {
+        return $this->belongsTo('App\Address', 'address_billing_id');
+    }
 }

@@ -29,12 +29,6 @@ Route::get('/mes_commandes', "LoginController@commandes");
 
 Route::get('/mes_adresses', "LoginController@adresses");
 
-/*Route::controllers([
-    'auth'=>'Auth\AuthController',
-    'password' => 'Auth\PasswordController'
-]);*/
-
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/contact', "PageController@contact");
@@ -50,5 +44,3 @@ Route::get('/a_propos', "PageController@a_propos");
 Route::get('/sav', "PageController@sav");
 
 Route::get('/inscription', "LoginController@inscription");
-
-Auth::routes();
