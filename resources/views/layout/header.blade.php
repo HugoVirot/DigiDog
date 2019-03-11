@@ -18,7 +18,17 @@
                     <a class="nav-link" href="/catalogue">Catalogue</a>
                     <a class="nav-link" href="/panier">Panier</a>
                     <a class="nav-link" href="/connexion">Connexion</a>
-                    <a class="nav-link" href="a_propos">A propos</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Mon compte
+                        </a>
+                        <div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/mon_compte">Mon compte</a>
+                            <a class="dropdown-item" href="/mes_adresses">Mes adresses</a>
+                            <a class="dropdown-item" href="/mes_commandes">Mes commandes</a>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="/a_propos">A propos</a>
                 </div>
             </nav>
         </div>
