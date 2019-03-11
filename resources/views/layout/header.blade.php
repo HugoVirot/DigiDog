@@ -4,7 +4,7 @@
 
         <div class="row  justify-content-between align-items-end ">
         <div class="col-auto">
-            <img src="{{ asset("images/logo-horizontal.png") }}" class="logo-header img-fluid">
+            <a href="/"><img src="{{ asset("images/logo-horizontal.png") }}" class="logo-header img-fluid"></a>
         </div>
 
         <div class="col-auto mr-5">

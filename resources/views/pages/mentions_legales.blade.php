@@ -12,7 +12,7 @@
 
     <div class="container">
         <div>
-            <h2 class="text-lg-center">MENTIONS LEGALES</h2>
+            <h1 class="text-lg-center text-secondary">MENTIONS LEGALES</h1>
             <h2>EDITEUR</h2>
             <p> Le site www.digidog.fr est édité par digidog, SASP au capital de 1000000 EUR
                 Directeur de la publication : Antoine Granjon Manager Général Développement contact@digidog.fr

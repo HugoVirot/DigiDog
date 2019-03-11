@@ -28,7 +28,7 @@
 
             </div>
             <br>
-            <div class="col-md-12 text-center mb-5">
+            <div class="col-md-12  mb-5">
                 <div class="form-textarea-wrapper  mb-3 resizable textarea-processed resizable-textarea">Message*<textarea placeholder="Message" class="form-control form-textarea required" id="edit-contact-message" name="contact_message" cols="60" rows="5"></textarea><div class="grippie"></div></div>
                 <button class="btn btn-primary-bis right col-md-2 col-md-offset-4 form-submit" type="submit" id="edit-contact-submit" name="op" value="Envoyer">Envoyer</button>
             </div>
