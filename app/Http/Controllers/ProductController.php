@@ -11,10 +11,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        //$products_asc = Product::->get();
-        //$products_asc = $products_asc[0];
+        $products_name = Product::orderBy('name')->get();
+        $products_price = Product::orderBy('price')->get();
 
-        return view('products/index', ['products' => $products/*, 'products_asc' => $products_asc*/]);
+        return view('products/index', ['products' => $products, 'products_name' => $products_name, 'products_price' => $products_price]);
     }
 
     public function show(Product $product)
