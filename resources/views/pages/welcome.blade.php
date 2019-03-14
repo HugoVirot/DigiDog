@@ -15,19 +15,12 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="{{ asset("images/distributeur.jpg") }}" class="d-block w-100" alt="distributeur">
-                        <div class="texte1">
-                            <h1><span class="spacer"></span>Nouveauté : le distributeur !<span class="spacer"></span>
-                            </h1></div>
                     </div>
                     <div class="carousel-item">
                         <img src="{{ asset("images/chien1.jpg") }}" class="d-block w-100" alt="traceur">
-                        <div class="texte2"><h1><span class="spacer"></span>Produit star : le traceur GPS<span
-                                        class="spacer"></span></h1></div>
                     </div>
                     <div class="carousel-item">
                         <img src="{{ asset("images/chien2.jpg") }}" class="d-block w-100" alt="capteur">
-                        <div class="texte2"><h1><span class="spacer"></span>Découvrez le capteur d'activité !<span
-                                        class="spacer"></span></h1></div>
                     </div>
                 </div>
             </div>
