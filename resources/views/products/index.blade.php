@@ -41,55 +41,18 @@
     <main class=" container mb-5">
         <div class="container row justify-content-between text-center ">
 
-
-            @if(isset($_GET['tri']) && $_GET['tri'] == 'name')
-
-                @foreach($products_name as $product_name)
-
-                    <div class="mr-5 mt-3">
-                        <a href="{{ '/catalogue/' . $product_name->id }}"><img
-                                    src="{{ asset("images/tour-connectee.jpg") }}" class="img_catalogue"></a>
-                        <h4><a href="{{ '/catalogue/' . $product_name->id }}">{{ $product_name->name }}</a></h4>
-                        <h3>{{$product_name->price}} EUR</h3>
-                        <p>
-                            <small maxlength>{{ $product_name->description }}</small>
-                        </p>
-                    </div>
-
-                @endforeach
-
-            @elseif(isset($_GET['tri']) && $_GET['tri'] == 'price')
-
-            @foreach ($products_price as $product_price)
+            @foreach ($products as $product)
 
                 <div class="mr-5 mt-3">
-                    <a href="{{ '/catalogue/' . $product_price->id }}"><img
-                                src="{{ asset("images/tour-connectee.jpg") }}"
-                                class="img_catalogue"></a>
-                    <h4><a href="{{ '/catalogue/' . $product_price->id }}">{{ $product_price->name }}</a></h4>
-                    <h3>{{$product_price->price}} EUR</h3>
+                    <a href="{{ route('voir_Produit', $product->id) }}"><img src="{{ asset("images/tour-connectee.jpg") }}"
+                                                                      class="img_catalogue"></a>
+                    <h4><a href="{{ '/catalogue/' . $product->id }}">{{ $product->name }}</a></h4>
+                    <h3>{{$product->price}} EUR</h3>
                     <p>
-                        <small maxlength>{{ $product_price->description }}</small>
+                        <small maxlength>{{ $product->description }}</small>
                     </p>
                 </div>
             @endforeach
-
-            @else
-                @foreach ($products as $product)
-
-                    <div class="mr-5 mt-3">
-                        <a href="{{ '/catalogue/' . $product->id }}"><img src="{{ asset("images/tour-connectee.jpg") }}"
-                                                                          class="img_catalogue"></a>
-                        <h4><a href="{{ '/catalogue/' . $product->id }}">{{ $product->name }}</a></h4>
-                        <h3>{{$product->price}} EUR</h3>
-                        <p>
-                            <small maxlength>{{ $product->description }}</small>
-                        </p>
-                    </div>
-                @endforeach
-
-            @endif
-
 
         </div>
     </main>

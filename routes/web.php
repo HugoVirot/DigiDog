@@ -17,7 +17,7 @@ Route::get('/panier', "CartController@panier");
 
 Route::get('/catalogue', "ProductController@index");
 
-Route::get('/catalogue/{product}', "ProductController@show");
+Route::get('/catalogue/{product}', "ProductController@show")->name('voir_Produit');
 
 Route::get('/connexion', "LoginController@index");
 
@@ -44,3 +44,11 @@ Route::get('/a_propos', "PageController@a_propos");
 Route::get('/sav', "PageController@sav");
 
 Route::get('/inscription', "LoginController@inscription");
+
+//Back Office
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', "AdminController@index")->name('index');
+
+    Route::resource('/products', 'ProductController');
+});

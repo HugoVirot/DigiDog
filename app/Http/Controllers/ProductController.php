@@ -8,13 +8,19 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
-        $products_name = Product::orderBy('name')->get();
-        $products_price = Product::orderBy('price')->get();
+        $sort = $request->input('tri');
 
-        return view('products/index', ['products' => $products, 'products_name' => $products_name, 'products_price' => $products_price]);
+        if ($sort == 'price') {
+            $products = Product::orderBy('price')->get();
+        } elseif ($sort == 'name') {
+            $products = Product::orderBy('name')->get();
+        } else {
+            $products = Product::get();
+        }
+
+        return view('products.index', ['products' => $products]);
     }
 
     public function show(Product $product)
