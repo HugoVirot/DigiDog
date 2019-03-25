@@ -8,6 +8,7 @@
     <link rel="icon" href="images/logo_sans_texte.png">
 </head>
 <body class="d-flex flex-column h-100">
+<h1>test</h1>
     @include('layout.header')
 
 
