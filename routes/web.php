@@ -13,7 +13,27 @@
 
 Route::get('/', 'PageController@accueil');
 
-Route::get('/panier', "CartController@panier");
+/**
+ * PANIER
+ */
+
+Route::get('/panier', "CartController@panier")->name('panier.recapitulatif');
+
+Route::get('/panier/identification','CartController@identification')->name('panier.identification');
+
+Route::get('/panier/creationCompte','CartController@creationCompte')->name('panier.compte');
+
+Route::get('/panier/adresse1','CartController@adresse1')->name('panier.adresse1');
+
+Route::get('/panier/adresse2','CartController@adresse2')->name('panier.adresse2');
+
+Route::get('/panier/fraisDePort','CartController@FraisDePort')->name('panier.FraisDePort');
+
+Route::get('/panier/paiement','CartController@paiement')->name('panier.paiement');
+
+/**
+ *
+ */
 
 Route::get('/catalogue', "ProductController@index");
 

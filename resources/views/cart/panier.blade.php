@@ -1,51 +1,114 @@
-@extends ('layout.app')
-
-@section('title')
-    Mon panier
-@endsection
-
-
-
+@extends('layout.app', ['title' => 'Home'])
 @section('content')
 
-    <div class="container-fluid mb-5">
-        <div class="col-12 row">
-            <h3 class="col-12">Votre panier</h3>
+    <form action="{{ route('panier.recapitulatif') }}" method="post">
+        <main class="container border mt-5 mb-5">
+            <nav class="breadcrumb mt-2">
+                <span class="breadcrumb-item active text-primary">RECAPITULATIF DE COMMANDE</span>
+                <a class="breadcrumb-item text-dark">IDENTIFICATION</a>
+                <a class="breadcrumb-item text-dark">ADRESSE</a>
+                <a class="breadcrumb-item text-dark">FRAIS DE PORT</a>
+                <a class="breadcrumb-item text-dark">PAIEMENT</a>
+            </nav>
+            <div class="row bg-secondary text-white justify-content-start py-2">
+                <div class="col-sm-12 ">
+                    <h1 class="h5 my-auto">COMMANDE</h1>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <table class="table">
+                    <thead class="bg-dark table-bordered">
+                    <tr>
+                        <th class="text-white text-left" scope="col">ARTICLE</th>
+                        <th class="text-white text-center" scope="col">PRIX</th>
+                        <th class="text-white text-center" scope="col">QUANTITE</th>
+                        <th class="text-white text-center" scope="col">TOTAL</th>
+                        <th class="text-white" scope="col"></th>
+                    </tr>
+                    </thead>
 
-            <div class="col-12 row">
-                <div class="col-9 row">
-                    <div class="col-9 align-self-center">
-                        <div class="d-flex justify-content-between">
-                            <img src="{{ asset("images/tour-connectee.jpg") }}" class="img_catalogue">
-                            <p class="align-self-center">Caméra connecté TowerWood</p>
-                            <p class="align-self-center">149,90 EUR</p>
+                    <tbody>
+                    @for($i = 0; $i < 3; $i++)
+                        <tr class="border-bottom">
+                            <td>
+                                <img class="w-25"
+                                     src="https://thumbs.dreamstime.com/t/products-colorful-stuck-stripes-text-alphabets-written-over-background-79309192.jpg"
+                                     alt="product image">
+                                <a class="text-decoration-none text-primary" href="nom de l'article">Nom de
+                                    l'article</a>
+                            </td>
+
+                            <td class="text-center">100€</td>
+
+                            <td class="text-center">
+                                <input type="number" step="1" value="" name="produit_quantite" class="form-control"
+                                       min="0" max="100">
+                            </td>
+
+                            <td class="text-center">100€</td>
+
+                            <td class="text-center">
+                                <button class="btn btn-danger" type="submit" name="supprimer_produit">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    @endfor
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="container mb-2">
+                <form>
+                    <div class="form-row">
+                        <div class="col-lg-2">
+                            <label for="REDUC">BONS DE REDUCTION</label>
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="reduction" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-lg-3">
+                            <input class=" btn btn-outline-primary" type="submit" value="AJOUTER" name="ajout">
                         </div>
                     </div>
-
-                    <div class="col-3 text-center align-self-center">
-                        <form method="POST">
-                            <input class="col-3" type="number" id="quantite" name="quantite" value="1">
-                            <button type="button" class="btn btn-primary-bis">Modifier la quantité</button>
-                        </form>
-                        <button type="button" class="btn btn-primary-bis">Supprimer</button>
+                </form>
+                <div class="row">
+                    <div class="col-lg-10 d-flex justify-content-end ">
+                        <h5 class="">Total produit HT:</h5>
+                    </div>
+                    <div class="col-lg-2 d-flex justify-content-end ">
+                        <h5>€</h5>
                     </div>
                 </div>
-
-
-                <aside class="col-3">
-                    <div class="bg-success p-4 text-center">
-                        <h3>Récapitulatif</h3>
-                        <p>Sous total :</p>
-                        <p>Frais de port :</p>
-                        <p>Total :</p>
-                        <button type="button" class="btn btn-primary-bis">Paiement</button>
+                <div class="row">
+                    <div class="col-lg-10 d-flex justify-content-end ">
+                        <h5 class="">Frais de port:</h5>
+                    </div>
+                    <div class="col-lg-2 d-flex justify-content-end ">
+                        <h5>€</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 d-flex justify-content-end ">
+                        <h5 class="">Total TTC:</h5>
+                    </div>
+                    <div class="col-lg-2 d-flex justify-content-end ">
+                        <h5>€</h5>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col d-flex justify-content-start ">
+                        <a href="{{route('home')}}" class="btn btn-outline-primary" role="button" aria-pressed="true">CONTINUER MES ACHATS</a>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <input class="btn btn-primary" type="submit" value="COMMANDER" name="recalcul">
                     </div>
 
-                </aside>
+                </div>
+
             </div>
-        </div>
-    </div>
-
-
-
+        </main>
+    </form>
 @endsection
+
