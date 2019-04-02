@@ -24,12 +24,15 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('admin.products.index') }}">Produits <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories <span class="sr-only">(current)</span></a>
+            </li>
         </ul>
     </div>
 </nav>
 </header>
 
-<main class="container-fluid">
+<main class="container-fluid p-0 m-0">
 
     @yield('content')
 

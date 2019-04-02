@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::get();
+        return view('admin.categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -35,7 +37,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+                               'name' => 'required|max:255'
+
+                           ], [
+                               'name.required' => 'Le nom de la Catégorie est obligatoire',
+                               'name.max:255' => 'Le champs ne doit pas depasser 255 caractères'
+                           ]);
+
+
+
+        $category = new Category();
+        $category->name = $request->input('name');
+        $category->save();
+
+
+        $categories = Category::all();
+        return view('admin.categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -44,9 +62,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+
+
     }
 
     /**
@@ -55,9 +74,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', ['category' => $category]);
     }
 
     /**
@@ -67,9 +86,24 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+
+
+        $request->validate([
+                               'name' => 'required|max:255'
+
+                           ], [
+                               'name.required' => 'Le nom de la Catégorie est obligatoire',
+                               'name.max:255' => 'Le champs ne doit pas depasser 255 caractères'
+                           ]);
+
+        $category->name = $request->input('name');
+        $category->save();
+
+
+        $categories = Category::all();
+        return view('admin.categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -78,8 +112,22 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        if ($category) {
+            try {
+                $category->delete();
+            } catch (\Illuminate\Database\QueryException $e) {
+                $categories = Category::all();
+                return view('admin.categories.index', ['categories' => $categories]);
+            }
+            $categories = Category::all();
+            return view('admin.categories.index', ['categories' => $categories]);
+
+        } else {
+
+            $categories = Category::all();
+            return view('admin.categories.index', ['categories' => $categories]);
+        }
     }
 }
