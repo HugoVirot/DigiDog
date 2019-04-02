@@ -5,3 +5,11 @@
 .menu a {
   color: white;
 }
+
+.btn-primary-bis{
+  color: #212529;
+  border-color: $primary;
+}
+.btn-primary-bis:hover{
+  background-color: $primary;
+}

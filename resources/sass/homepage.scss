@@ -5,8 +5,12 @@
 }
 
 #garanties {
-  background-color: $primary;
+  border: 3px solid $primary;
 
+}
+
+#garanties p {
+  color : $primary;
 }
 
 .categories {
@@ -14,8 +18,8 @@
 }
 
 .imagescategories {
-  height: 300px;
-  width: 480px;
+  height: 330px;
+  width: 510px;
 }
 
 .nomscategories {
@@ -41,7 +45,7 @@ h2, h3 {
 }
 
 #vosgaranties {
-  color: white;
+  color: $primary;
 }
 
 h3 {
@@ -103,4 +107,20 @@ p {
 .imagesventes {
   width: 200px;
   heigth: 200px;
+}
+
+.avisclients {
+
+  border: 3px solid $primary;
+  padding : 20px;
+  margin-bottom: 20px;
+}
+
+.avisclients h5 {
+  color : $primary;
+}
+
+
+.ligneimagescat {
+  text-align : center;
 }
