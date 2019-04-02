@@ -49,6 +49,7 @@ Route::get('/inscription', "LoginController@inscription");
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', "AdminController@index")->name('index');
-
+    Route::resource('/categories', 'CategoryController');
     Route::resource('/products', 'ProductController');
+
 });
