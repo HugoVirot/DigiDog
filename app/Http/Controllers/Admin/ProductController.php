@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         $products = Product::with('category')->paginate();
 
-        return view('backoffice.products.index', ['products' => $products]);
+        return view('admin.products.index', ['products' => $products]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('backoffice.products.create');
+        return view('admin.products.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class ProductController extends Controller
     {
         $product->load('category');
 
-        return view('backoffice.products.show', ['product' => $product]);
+        return view('admin.products.show', ['product' => $product]);
     }
 
     /**
@@ -77,7 +77,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
 
-        return view('backoffice.products.edit', ['product' => $product]);
+        return view('admin.products.edit', ['product' => $product]);
     }
 
     /**
