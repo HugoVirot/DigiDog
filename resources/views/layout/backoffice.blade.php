@@ -24,6 +24,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('admin.products.index') }}">Produits <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('admin.categories.index') }}">Catégories <span class="sr-only">(current)</span></a>
+            </li>
         </ul>
     </div>
 </nav>
