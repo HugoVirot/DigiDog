@@ -10879,3 +10879,33 @@ p {
   max-width: 100%;
 }
 
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.nav-link i {
+  position: relative;
+  font-size: 25px;
+  top: 8px;
+  right: 23px;
+}
+
+.nav-link i:hover {
+  position: relative;
+  color: #59114d;
+}
+
+.nav-item:hover {
+  background-color: #7fd6ff;
+}
+
+.logo-nav {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  right: 25px;
+}
+
