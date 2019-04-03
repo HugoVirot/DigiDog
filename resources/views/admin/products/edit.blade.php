@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-    <div class="container text-center mt-5 mb-3">
-        <h1>Modification d'un produit</h1>
+    <div class="text-center mb-3">
+        <h1 class="w100 bg-dark text-light text-center mt-3">Update Produit</h1>
     </div>
 
     <div class="container mb-5">

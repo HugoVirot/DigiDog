@@ -10880,9 +10880,26 @@ p {
 }
 
 body {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  background-color: rgba(160, 172, 176, 0.23);
+}
+
+.wrapper-bg-dashboard {
+  z-index: -1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper-bg-dashboard .bg-dashboard {
+  opacity: 0.1;
+}
+
+.navAdmin {
+  box-shadow: 1px 5px 5px #008bcb;
+}
+
+.navbar {
+  padding: 0;
 }
 
 .nav-link i {
@@ -10907,5 +10924,47 @@ body {
   height: 50px;
   top: 0px;
   right: 25px;
+}
+
+.vapor {
+  position: fixed;
+  opacity: 0.15;
+  font-size: 228px;
+  color: #009ce5;
+  z-index: 0;
+}
+
+/*  ****  CARD ****  */
+
+.card-admin:hover {
+  background-color: #00adfe;
+  color: white;
+}
+
+.card-admin:hover i:not(:hover) {
+  color: white;
+}
+
+i:hover {
+  color: white;
+}
+
+.admin-fa-color {
+  color: #009ce5;
+}
+
+.admin-fa-color:hover {
+  color: white;
+}
+
+.a-no-decoration {
+  text-decoration: none !important;
+  transition: 0.3s;
+}
+
+.big-icon {
+  padding: 5px;
+  font-size: 100px;
+  color: #009ce5;
 }
 

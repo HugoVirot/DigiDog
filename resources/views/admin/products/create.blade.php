@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="text-center mb-5">
-        <h1>Accueil de la page de création d'un produit</h1>
+        <h1 class="w100 bg-dark text-light text-center mt-3">Ajout Produit</h1>
     </div>
 
     <div class="container">
