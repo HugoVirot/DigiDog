@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Votre Panier'])
+@extends('layout.app', ['title' => 'Votre Panier'])
 
 @section('content')
     <main class="container border mt-5 mb-5">

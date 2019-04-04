@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Votre Panier'])
+@extends('layout.app', ['title' => 'Votre Panier'])
 
 
 @section('content')
@@ -99,7 +99,7 @@
         </div>
         <div class="row pt-3">
             <div class="col d-flex justify-content-start ">
-                <a href="{{route('panier.adresse2')}}" class="btn btn-outline-primary" role="button"
+                <a href="{{route('panier.adresse1')}}" class="btn btn-outline-primary" role="button"
                    aria-pressed="true">PRECEDENT</a>
             </div>
         </div>

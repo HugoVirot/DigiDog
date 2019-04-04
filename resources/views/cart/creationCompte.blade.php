@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Votre Panier'])
+@extends('layout.app', ['title' => 'Votre Panier'])
 
 
 @section('header')
@@ -15,7 +15,7 @@
             </div>
 
         </div>
-        <form>
+        <form actionmethod="post">
             <div class="row d-flex flex-row w-100 p-5 mt-1 ">
 
 
