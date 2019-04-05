@@ -13,7 +13,32 @@
 
 Route::get('/', 'PageController@accueil');
 
-Route::get('/panier', "CartController@panier");
+/**
+ * PANIER
+ */
+
+Route::get('/panier', "CartController@panier")->name('panier.recapitulatif');
+
+
+Route::post('/panier/identification','CartController@identification')->name('panier.identification');
+
+Route::get('/panier/adresse1','CartController@CreateAdresse1')->name('panier.adresse1');
+
+
+
+Route::get('/panier/creationCompte','CartController@creationCompte')->name('panier.compte');
+Route::get('/panier/fraisDePort','CartController@FraisDePort')->name('panier.FraisDePort');
+
+/*
+Route::get('/panier/adresse2','CartController@adresse2')->name('panier.adresse2');
+
+
+
+Route::get('/panier/paiement','CartController@paiement')->name('panier.paiement');
+*/
+/**
+ *
+ */
 
 Route::get('/catalogue', "ProductController@index");
 
@@ -51,5 +76,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', "AdminController@index")->name('index');
     Route::resource('/categories', 'CategoryController');
     Route::resource('/products', 'ProductController');
-
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('addresses', 'AddressController');
