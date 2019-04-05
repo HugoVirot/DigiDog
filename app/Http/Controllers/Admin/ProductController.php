@@ -41,7 +41,6 @@ class ProductController extends Controller
     public function store(AjoutProduit $request)
     {
         $validated = $request->validated();
-
         $product = new Product;
         $product->name = $validated['name'];
         $product->picture = $validated['picture'];

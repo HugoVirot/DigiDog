@@ -10,26 +10,43 @@
 
     <div class="container mb-5">
         <div class="row mb-5">
-            <div class="col-md-6 mt-2">
-                <img src="{{ asset('images/photo_produit.jpeg') }}" class="photo_produit ">
-            </div>
-
-            <div class="col-md-6">
-                <h1>{{ $product->name }}</h1>
-
-                <h3>{{ $product->price }} € + frais de livraison</h3>
-
-                <p>{{ $product->description }}</p>
-                <div class="form-inline">
-                    <input class="form-control mr-3" type="number" id="tentacles" name="tentacles"
-                           min="0" max="50">
-                    <button class="btn btn-primary-bis"  type="button">Ajoutez au panier</button>
+            <form action="{{route('productAddToCart' , [$product])}}" method="post" >
+                @csrf
+                <div class="col-md-6 mt-2">
+                    <img src="{{ asset('images/photo_produit.jpeg') }}" class="photo_produit ">
                 </div>
 
+                <div class="col-md-6">
+                    <h1>{{ $product->name }}</h1>
 
-            </div>
+                    <h3>{{ $product->price }} € + frais de livraison</h3>
+
+                    <p>{{ $product->description }}</p>
+
+                        <input class="form-control mr-3" type="number" id="nbProduct" name="nbProduct"
+                               min="0" max="{{$product->stock}}">
+                        <button class="btn btn-primary-bis" type="submit">Ajoutez au panier</button>
+                </div>
+            </form>
+            @IF (session()->has('state'))
+                <div class="{{Session::get('color')}} text-center p-3 mt-5 mb-5 toaster-info d-flex justify-content-center align-content-center">
+                    <p>
+                    <h3 class="text-light"> {{ Session::get('state') }}</h3></p>
+                </div>
+                {{session()->forget(['state', 'color'])}}
+            @endif
+
+
+
         </div>
     </div>
+
+    {{Session::get('panier')}}
+
+
+
+
+
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-4 text-center align-self-center ">

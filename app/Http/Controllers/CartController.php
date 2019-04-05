@@ -46,14 +46,19 @@ class CartController extends Controller
         return view("cart.adresse2");
     }
 
+
     public function fraisDePort()
     {
         return view("cart.fraisDePort");
     }
 
+
     public function paiement()
     {
         return view("cart.paiement");
     }
+
+
+
 
 }
