@@ -9,43 +9,26 @@
 @section('content')
 
     <div class="container mb-5">
-        <div class="row mb-5">
-            <form action="{{route('productAddToCart' , [$product])}}" method="post" >
+        <div class="row mb-5 d-flex flex-column justify-content-center align-items-center">
+
+            <form action="{{route('productAddToCart' , [$product])}}" method="post">
                 @csrf
-                <div class="col-md-6 mt-2">
+                <div class="col-sm-12 mt-2 ">
                     <img src="{{ asset('images/photo_produit.jpeg') }}" class="photo_produit ">
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-sm-12 d-flex flex-column justify-content-center align-items-center">
                     <h1>{{ $product->name }}</h1>
-
                     <h3>{{ $product->price }} € + frais de livraison</h3>
-
                     <p>{{ $product->description }}</p>
+                    <input class="form-control mr-3" type="number" id="nbProduct" name="nbProduct"
+                           min="0" max="{{$product->stock}}" value="1">
 
-                        <input class="form-control mr-3" type="number" id="nbProduct" name="nbProduct"
-                               min="0" max="{{$product->stock}}">
-                        <button class="btn btn-primary-bis" type="submit">Ajoutez au panier</button>
+                    <button class="btn btn-primary-bis mt-2" type="submit">Ajoutez au panier</button>
                 </div>
             </form>
-            @IF (session()->has('state'))
-                <div class="{{Session::get('color')}} text-center p-3 mt-5 mb-5 toaster-info d-flex justify-content-center align-content-center">
-                    <p>
-                    <h3 class="text-light"> {{ Session::get('state') }}</h3></p>
-                </div>
-                {{session()->forget(['state', 'color'])}}
-            @endif
-
-
-
         </div>
     </div>
-
-    {{Session::get('panier')}}
-
-
-
-
 
     <div class="container">
         <div class="row mb-5">
