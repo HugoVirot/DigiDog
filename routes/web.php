@@ -72,11 +72,12 @@ Route::get('/inscription', "LoginController@inscription");
 
 //Back Office
 
-Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', "AdminController@index")->name('index');
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function (){
+    Route::get('/', "AdminController@index")->name('index')->middleware('admin');
     Route::resource('/categories', 'CategoryController');
     Route::resource('/products', 'ProductController');
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
