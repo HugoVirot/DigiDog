@@ -96,3 +96,23 @@ i:hover {
 
 }
 
+.toaster-info {
+  opacity: 0;
+  animation-duration: 3.5s;
+  animation-name: getOut;
+
+}
+
+
+@keyframes getOut {
+  from {
+
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+}
+

@@ -40,10 +40,10 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto m-0 p-0">
-                    <li class="nav-item pl-5 m-0">
-                        <a class="nav-link logo-nav"
-                           href="{{ route('admin.categories.index') }}"><i class="fas fa-sign-out-alt"></i></a>
-                    </li>
+                <li class="nav-item pl-5 m-0">
+                    <a class="nav-link logo-nav"
+                       href="{{ route('admin.categories.index') }}"><i class="fas fa-sign-out-alt"></i></a>
+                </li>
             </ul>
 
 
@@ -55,8 +55,14 @@
     <div class="wrapper-bg-dashboard d-flex justify-content-center align-items-center">
         <img class="img-fluid bg-dashboard" src="{{asset('images/logo_sans_texte.png')}}">
     </div>
+    @IF (session()->has('state'))
+        <div class="{{Session::get('color')}} text-center p-3 mt-5 mb-5 toaster-info d-flex justify-content-center align-content-center">
+            <p>
+            <h3 class="text-light"> {{ Session::get('state') }}</h3></p>
+        </div>
+        {{session()->forget(['state', 'color'])}}
+    @endif
     @yield('content')
-
 </main>
 
 </body>

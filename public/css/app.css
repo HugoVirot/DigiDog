@@ -10968,3 +10968,31 @@ i:hover {
   color: #009ce5;
 }
 
+.toaster-info {
+  opacity: 0;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+  -webkit-animation-name: getOut;
+          animation-name: getOut;
+}
+
+@-webkit-keyframes getOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes getOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+

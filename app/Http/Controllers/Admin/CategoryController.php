@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\custom\classes\DigiDogMessageState;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -53,6 +54,9 @@ class CategoryController extends Controller
 
 
         $categories = Category::all();
+        $request->session()->flash('state', DigiDogMessageState::$SUCCESS_CATEGORY_ADD);
+        $request->session()->flash('color', 'bg-secondary');
+
         return view('admin.categories.index', ['categories' => $categories]);
     }
 
@@ -100,6 +104,8 @@ class CategoryController extends Controller
 
         $category->name = $request->input('name');
         $category->save();
+        $request->session()->flash('state', DigiDogMessageState::$SUCCESS_CATEGORY_UPDATE);
+        $request->session()->flash('color', 'bg-secondary');
 
 
         $categories = Category::all();
@@ -112,21 +118,34 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Request $request, Category $category)
     {
         if ($category) {
             try {
+
                 $category->delete();
+
             } catch (\Illuminate\Database\QueryException $e) {
                 $categories = Category::all();
+                $request.session()->flash('state', DigiDogMessageState::$ERROR_CATEGORY);
+                $request.session()->flash('color', 'bg-secondary');
                 return view('admin.categories.index', ['categories' => $categories]);
+
+
             }
             $categories = Category::all();
+            $request.session()->flash('state', DigiDogMessageState::$SUCCESS_CATEGORY_DELETE);
+            $request.session()->flash('color', 'bg-secondary');
+
             return view('admin.categories.index', ['categories' => $categories]);
+
 
         } else {
 
             $categories = Category::all();
+
+            $request.session()->flash('state', DigiDogMessageState::$ERROR_CATEGORY);
+            $request.session()->flash('color', 'bg-secondary');
             return view('admin.categories.index', ['categories' => $categories]);
         }
     }
