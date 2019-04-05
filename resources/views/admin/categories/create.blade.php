@@ -5,8 +5,7 @@
     <div class="container-fluid">
         <div class="row text-center mb-5">
             <div class="col m-0 p-0">
-
-                <h1 class="w100 bg-dark text-light text-center">Ajout Catégorie</h1>
+                <h1 class="w100 bg-dark text-light text-center mt-3">Ajout Catégorie</h1>
             </div>
         </div>
         <div class="row text-center">

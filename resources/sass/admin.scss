@@ -1,0 +1,118 @@
+$bg-nav-color: darken($primary,15);
+$text-nav-color: lighten($bg-nav-color, 49);
+$text-hover: lighten($bg-nav-color, 89);
+
+body {
+    background-color: rgba(160, 172, 176, 0.23);
+}
+.wrapper-bg-dashboard{
+    z-index: -1;
+    position: fixed;
+    width:100vw;
+    height: 100vh;
+
+    .bg-dashboard{
+        opacity: 0.1;
+    }
+}
+.navAdmin{
+    box-shadow: 1px 5px 5px darken($primary,20);
+}
+.navbar{
+    padding:0;
+}
+.nav-link {
+
+
+  i{
+    position:relative;
+    font-size: 25px;
+    top:8px;
+    right:23px;
+  }
+
+  i:hover{
+    position: relative;
+    color:$secondary;
+
+  }
+}
+.nav-item:hover{
+  background-color: lighten($primary,15);
+}
+
+
+.logo-nav{
+  position: relative;
+  width :50px;
+  height:50px;
+  top : 0px;
+  right:25px;
+}
+
+.vapor {
+    position: fixed;
+    opacity: 0.15;
+    font-size: 228px;
+    color: $bg-nav-color;
+    z-index: 0;
+}
+
+/*  ****  CARD ****  */
+.card {
+    //box-shadow: 3px 0px 5px darken($bg-nav-color, 55%);
+}
+
+.card-admin:hover {
+    background-color: lighten($bg-nav-color, 05%);
+    color: $text-hover;
+}
+
+.card-admin:hover i:not(:hover) {
+    color: $text-hover;
+}
+
+i:hover {
+    color: $text-hover;
+}
+.admin-fa-color{
+    color: $bg-nav-color;
+
+}
+.admin-fa-color:hover{
+    color: $text-hover;
+}
+.a-no-decoration{
+    text-decoration: none!important;
+    transition: 0.3s;
+}
+.a-no-decoration:hover{
+
+}
+.big-icon {
+    padding: 5px;
+    font-size: 100px;
+    color: $bg-nav-color;
+
+}
+
+.toaster-info {
+  opacity: 0;
+  animation-duration: 3.5s;
+  animation-name: getOut;
+
+}
+
+
+@keyframes getOut {
+  from {
+
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+}
+

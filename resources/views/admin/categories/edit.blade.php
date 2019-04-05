@@ -6,7 +6,7 @@
         <div class="row text-center mb-5">
             <div class="col m-0 p-0">
 
-                <h1 class="w100 bg-dark text-light text-center">Modification Catégorie</h1>
+                <h1 class="w100 bg-dark text-light text-center mt-3">Modification Catégorie</h1>
             </div>
         </div>
         <div class="row text-center">

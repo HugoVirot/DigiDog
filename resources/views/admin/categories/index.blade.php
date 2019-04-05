@@ -3,45 +3,9 @@
 
 @section('content')
 
-    <h1 class="w100 bg-dark text-light text-center">Catégories</h1>
-    <a class="btn btn-success ml-5 mb-5" href="{{route('admin.categories.create')}}">Ajouter une catégorie</a>
+    <h1 class="w100 bg-dark text-light text-center mt-3">Catégories</h1>
 
-    @if (isset($errorsConstraint))
-        <div class="row toaster-info">
-            <div class="col">
-                <div class="bg-danger text-center p-3 mt-5 mb-5">
-                    <p class="text-light">{{ $errorsConstraint }}</p>
-                </div>
-            </div>
-        </div>
-    @endif
-    @if (isset($AddCat))
-        <div class="row toaster-info">
-            <div class="col">
-                <div class="bg-success text-center p-3 mt-5 mb-5">
-                    <p class="text-light">{{ $AddCat }}</p>
-                </div>
-            </div>
-        </div>
-    @endif
-    @if (isset($supprCat))
-        <div class="row toaster-info">
-            <div class="col">
-                <div class="bg-success text-center p-3 mt-5 mb-5">
-                    <p class="text-light">{{ $supprCat }}</p>
-                </div>
-            </div>
-        </div>
-    @endif
-    @if (isset($pudateCat))
-        <div class="row toaster-info">
-            <div class="col">
-                <div class="bg-success text-center p-3 mt-5 mb-5">
-                    <p class="text-light">{{ $updateCat }}</p>
-                </div>
-            </div>
-        </div>
-    @endif
+    <a class="btn btn-success ml-5 mb-5" href="{{route('admin.categories.create')}}">Ajouter une catégorie</a>
     <table class="table">
         <thead>
         <tr>
