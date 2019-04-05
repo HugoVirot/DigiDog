@@ -82,3 +82,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('addresses', 'AddressController');
+
+Route::resource('orders','OrderController');
