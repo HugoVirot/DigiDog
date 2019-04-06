@@ -29,24 +29,26 @@
                     </thead>
 
                     <tbody>
-                    @for($i = 0; $i < 3; $i++)
+                    @foreach($products as $key => $product)
+
                         <tr class="border-bottom">
                             <td>
                                 <img class="w-25"
-                                     src="https://thumbs.dreamstime.com/t/products-colorful-stuck-stripes-text-alphabets-written-over-background-79309192.jpg"
+                                     src="{{asset("images/".$product->picture)}}"
                                      alt="product image">
-                                <a class="text-decoration-none text-primary" href="nom de l'article">Nom de
-                                    l'article</a>
+                                <a class="text-decoration-none text-primary"
+                                   href="nom de l'article">{{$product->name}}</a>
                             </td>
 
-                            <td class="text-center">100€</td>
+                            <td class="text-center">{{$product->price}} €</td>
 
                             <td class="text-center">
-                                <input type="number" step="1" value="" name="produit_quantite" class="form-control"
+                                <input type="number" step="1" value="{{$qts[$key]}}" name="produit_quantite"
+                                       class="form-control"
                                        min="0" max="100">
                             </td>
 
-                            <td class="text-center">100€</td>
+                            <td class="text-center">{{$sommesLigne[$key]}} €</td>
 
                             <td class="text-center">
                                 <button class="btn btn-danger" type="submit" name="supprimer_produit">
@@ -54,7 +56,7 @@
                                 </button>
                             </td>
                         </tr>
-                    @endfor
+                    @endforeach
 
                     </tbody>
                 </table>
@@ -64,7 +66,7 @@
 
                 <div class="row">
                     <div class="col-lg-10 d-flex justify-content-end ">
-                        <h5 class="">Total produit HT:</h5>
+                        <h5 class="">Total produit HT: {{$total}}</h5>
                     </div>
                     <div class="col-lg-2 d-flex justify-content-end ">
                         <h5>€</h5>
@@ -88,7 +90,8 @@
                 </div>
                 <div class="row pt-5">
                     <div class="col d-flex justify-content-start ">
-                        <a href="{{route('home')}}" class="btn btn-outline-primary" role="button" aria-pressed="true">CONTINUER MES ACHATS</a>
+                        <a href="{{route('home')}}" class="btn btn-outline-primary" role="button" aria-pressed="true">CONTINUER
+                            MES ACHATS</a>
                     </div>
                     <div class="col d-flex justify-content-end">
                         <input class="btn btn-primary" type="submit" value="COMMANDER" name="recalcul">
@@ -99,5 +102,8 @@
             </div>
         </main>
     </form>
+
+
+
 @endsection
 

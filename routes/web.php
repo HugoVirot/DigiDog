@@ -40,7 +40,7 @@ Route::get('/panier/paiement','CartController@paiement')->name('panier.paiement'
  *
  */
 /*---------------------------------------------------------------------------*/
-Route::get('/catalogue', "ProductController@index");
+Route::get('/products', "ProductController@index")->name('products');
 Route::get('/catalogue/{product}', "ProductController@show")->name('voir_Produit');
 Route::get('/connexion', "LoginController@index");
 Route::get('/connexion', "LoginController@index");

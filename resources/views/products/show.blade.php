@@ -1,7 +1,7 @@
 @extends ('layout.app')
 
 @section('title')
-    wafwaf gps
+    {{ $product->name }}
 @endsection
 
 

@@ -36,8 +36,9 @@ class ProductController extends Controller
      */
     public function addToCart(Request $request, Product $product)
     {
-        $nbProduit  = $request->get('nbProduct');
-        // le panier exist
+        $nbProduct  = $request->get('nbProduct');
+
+        // init le panier exist
         if ($request->session()->has('panier')) {
             $panier = session()->get('panier');
         } else {
@@ -45,9 +46,9 @@ class ProductController extends Controller
         }
         // le produit est present dans la session
         if (array_key_exists((int)$product->id, $panier)) {
-            $panier[$product->id] = intval($panier[$product->id]) + $nbProduit;
+            $panier[$product->id] = intval($panier[$product->id]) + $nbProduct;
         } else {
-            $panier[$product->id] = $nbProduit;
+            $panier[$product->id] = $nbProduct;
         }
         // affectation de l'array à la session
         $request->session()->put('panier',$panier);
