@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
+use function App\custom\arrayToSession;
+use function App\custom\recapPanier;
+use function App\custom\sessionToArray;
+
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,47 +16,39 @@ class CartController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('panier', 'identification');
+        $this->middleware('auth')->except('panier', 'identification','removeSessionProduct','recalculePanier');
     }
 
-
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function panier()
     {
-        // id des produits
-        $productsKey = [];
-        // Qts par produits
-        $allQts = [];
-        // tableau des sommes p * qts
-        $sommeLigne = [];
-
-
-        if (session()->has('panier')) {
-            // dump('panier');
-            $panier = session()->get('panier');
-        } else {
-            $panier = [];
-        }
-
-        // recuperer les produits et calculer le prix par ligne
-        foreach ($panier as $product => $qts) {
-            array_push($productsKey, $product);
-            array_push($allQts, $qts);
-        }
-
-        // On récupère les produits
-        $products = Product::find($productsKey);
-
-        // calcul du prix des produits * prix unitaire
-        foreach ($products as $key => $product) {
-            array_push($sommeLigne, ($product->price * $allQts[$key]));
-        }
-        // Total de la commande sans les frais de port
-        $total = Array_sum($sommeLigne);
-
-        return view('cart.panier', ['products' => $products, 'sommesLigne' => $sommeLigne, 'total' => $total,'qts' => $allQts]);
-
+        return view('cart.panier', recapPanier());
     }
+    public function removeSessionProduct($id){
 
+        $panier = sessionToArray();
+        if (array_key_exists($id, $panier)) {
+            unset($panier[$id]);
+        }
+        arrayToSession($panier);
+
+
+        return redirect('panier');
+    }
+    public function recalculePanier(Request $request){
+
+        $req = $request->all();
+        $panier = [];
+        foreach ($req as $key => $line){
+           if (is_numeric($key))
+               $panier[(int)$key] = (int)$line;
+        }
+        arrayToSession($panier);
+
+        return redirect('panier');
+    }
     public function identification()
     {
         if (Auth::check()) {
@@ -60,31 +57,22 @@ class CartController extends Controller
             return view("cart.identification");
         }
     }
-
-
     public function creationCompte()
     {
         return view("cart.creationCompte");
     }
-
-
     public function CreateAdresse1()
     {
         return view("cart.adresse1");
     }
-
     public function adresse2()
     {
         return view("cart.adresse2");
     }
-
-
     public function fraisDePort()
     {
         return view("cart.fraisDePort");
     }
-
-
     public function paiement()
     {
         return view("cart.paiement");

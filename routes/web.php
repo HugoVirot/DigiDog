@@ -18,14 +18,10 @@ Route::get('/', 'PageController@accueil');
  */
 
 Route::get('/panier', "CartController@panier")->name('panier.recapitulatif');
-
-
-Route::post('/panier/identification','CartController@identification')->name('panier.identification');
-
+Route::get('/panier/remove/{id}', "CartController@removeSessionProduct")->name('panier.remove.product');
+Route::post('/panier/recalcule','CartController@recalculePanier')->name('panier.recalcule');
+Route::get('/panier/identification','CartController@identification')->name('panier.identification');
 Route::get('/panier/adresse1','CartController@CreateAdresse1')->name('panier.adresse1');
-
-
-
 Route::get('/panier/creationCompte','CartController@creationCompte')->name('panier.compte');
 Route::get('/panier/fraisDePort','CartController@FraisDePort')->name('panier.FraisDePort');
 
@@ -40,8 +36,9 @@ Route::get('/panier/paiement','CartController@paiement')->name('panier.paiement'
  *
  */
 /*---------------------------------------------------------------------------*/
-Route::get('/products', "ProductController@index")->name('products');
+Route::resource('/products', 'ProductController');
 Route::get('/catalogue/{product}', "ProductController@show")->name('voir_Produit');
+
 Route::get('/connexion', "LoginController@index");
 Route::get('/connexion', "LoginController@index");
 Route::get('/mon_compte', "LoginController@show");
@@ -61,10 +58,12 @@ Route::post('/product/addToCart/{product}', "ProductController@addToCart")->name
 
 
 
-//Route::resource('products', 'ProductController');
 
 
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('addresses', 'AddressController');
 
 
 
@@ -73,12 +72,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', "AdminController@index")->name('index');
 
     Route::resource('/categories', 'CategoryController');
-
     Route::resource('/products', 'ProductController');
 
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('addresses', 'AddressController');
