@@ -32,7 +32,7 @@ namespace App\custom ;
      *
      *
      */
-    function recapPanier(){
+    function recapPanier($frais = null){
 
         // id des produits
         $productsKey = [];
@@ -57,7 +57,12 @@ namespace App\custom ;
         // Total de la commande sans les frais de port
         $total = Array_sum($sommeLigne);
 
-        return ['products' => $products, 'sommesLigne' => $sommeLigne, 'total' => $total,'qts' => $allQts];
+        if ($frais){
+            return ['products' => $products, 'sommesLigne' => $sommeLigne, 'total' => $total,'qts' => $allQts, 'frais' =>  $frais];
+        }else{
+            return ['products' => $products, 'sommesLigne' => $sommeLigne, 'total' => $total,'qts' => $allQts];
+        }
+
     }
     function sessionToArray(){
         $panier =[];
@@ -70,4 +75,6 @@ namespace App\custom ;
     function arrayToSession($panier){
         Session::put('panier', $panier);
     }
+
+
 

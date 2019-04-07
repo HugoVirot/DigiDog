@@ -10,6 +10,7 @@ use function App\custom\sessionToArray;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -73,9 +74,17 @@ class CartController extends Controller
     {
         return view("cart.fraisDePort");
     }
-    public function paiement()
+
+    public function paiement(Request $request)
     {
-        return view("cart.paiement");
+        //temporary traitment for price transporteur
+        $Transporteur_price = [0,6,4,42];
+        Session::put('fraisdeport' , $Transporteur_price[$request->input('optradio')]);
+
+
+
+
+        return view("cart.paiement" ,recapPanier($Transporteur_price[$request->input('optradio')]));
     }
 
 
