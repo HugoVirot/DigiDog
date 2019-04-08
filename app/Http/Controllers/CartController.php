@@ -13,6 +13,7 @@ use App\Order;
 use App\Product;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -94,6 +95,7 @@ class CartController extends Controller
     {
         //temporary traitment for price carrier
         $Transporteur_price = [0,8,6,4];
+
         Session::put('fraisdeport' , $Transporteur_price[$request->input('optradio')]);
 
         return view("cart.paiement" ,recapPanier($Transporteur_price[$request->input('optradio')]));
@@ -105,29 +107,19 @@ class CartController extends Controller
         //Order creation
         $order = Order::create([
             'order_num'=> generateKeyOrder(),
-            'date' => Date ::now(),
+            'date' => Carbon::now(),
             'user_id' => Auth::id(),
             'address_delivery_id' => $Adresses->id,
             'address_billing_id' => $Adresses->id,
             ]);
-        // subOrderS creation
+
 
         $basket = sessionToArray();
         foreach ($basket as $idProduct => $qts){
             $product = Product::find($idProduct);
-            $order->Product()->attach(product_id,['qts' => $qts, 'price'  => $product->price * $qts]);
-            $subOrder =
-
+            $order->products()->attach($product->id,['quantity' => $qts, 'price'  => $product->price * $qts]);
         }
 
-        dd($data->id);
-
-
-        $id = DB::table('')->insertGetId(
-            [ 'name' => 'first' ]
-        );
-
-        dd($id);
    }
 
 }

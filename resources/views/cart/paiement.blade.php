@@ -37,8 +37,9 @@
 
                     </th>
                     <th>
-                        <form action=""  method="post">
-                        <a href="{{route('panier.addOrder')}}" class="btn btn-outline-primary" role="button"  aria-pressed="true">PAYER</a>
+                        <form action="{{route('panier.addOrder')}}"  method="post">
+                            @csrf
+                        <button type="submit"  class="btn btn-outline-primary" aria-pressed="true">PAYER</button>
                         </form>
                     </th>
                 </tr>
