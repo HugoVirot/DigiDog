@@ -40,8 +40,8 @@ Route::get('/panier/paiement','CartController@paiement')->name('panier.paiement'
 Route::resource('/products', 'ProductController');
 Route::get('/catalogue/{product}', "ProductController@show")->name('voir_Produit');
 
-Route::get('/connexion', "LoginController@index");
-Route::get('/connexion', "LoginController@index");
+Route::post('/login', "LoginController@index");
+
 Route::get('/mon_compte', "LoginController@show");
 Route::get('/mes_commandes', "LoginController@commandes");
 Route::get('/mes_adresses', "LoginController@adresses");
