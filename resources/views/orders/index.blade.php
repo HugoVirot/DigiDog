@@ -23,7 +23,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>{{$order->order_num}}</td>
+                    <td><a href="{{route('orders.show',$order)}}"> {{$order->order_num}}</a></td>
                     <td>{{$order->date}}</td>
                 </tr>
                 </tbody>
