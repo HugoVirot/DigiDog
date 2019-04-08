@@ -44,7 +44,7 @@
                             <div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/mon_compte">Mon compte</a>
                                 <a class="dropdown-item" href="/mes_adresses">Mes adresses</a>
-                                <a class="dropdown-item" href="/mes_commandes">Mes commandes</a>
+                                <a class="dropdown-item" href="/orders">Mes commandes</a>
                             </div>
                         </div>
                         <a class="nav-link" href="/a_propos">A propos</a>
