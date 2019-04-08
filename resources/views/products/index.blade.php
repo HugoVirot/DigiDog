@@ -9,22 +9,14 @@
     <!-- Bandeau des catégories -->
     <div class="container-fluid mb-5 bg-success">
         <div class="row text-center mb-4 mt-4">
+
+            @foreach($categories as $category)
+                {{--dd($category)--}}
             <div class="col-3">
-                <h3>Traceur GPS</h3>
-                <a href="#"><img src="{{ asset("images/sante.jpg") }}" class="img_categorie rounded-circle"></a>
+                <h3>{{$category->name}}</h3>
+                <a href="{{ route('categories.show', $category) }}"><img src="{{ asset("images/sante.jpg") }}" class="img_categorie rounded-circle"></a>
             </div>
-            <div class="col-3">
-                <h3>Caméra</h3>
-                <a href="#"><img src="{{ asset("images/sante.jpg") }}" class="img_categorie rounded-circle"></a>
-            </div>
-            <div class="col-3">
-                <h3>Capteur d'activité</h3>
-                <a href="#"><img src="{{ asset("images/sante.jpg") }}" class="img_categorie rounded-circle"></a>
-            </div>
-            <div class="col-3">
-                <h3>Distributeur</h3>
-                <a href="#"><img src="{{ asset("images/sante.jpg") }}" class="img_categorie rounded-circle"></a>
-            </div>
+           @endforeach
         </div>
     </div>
 
