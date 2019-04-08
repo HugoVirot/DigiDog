@@ -6,7 +6,6 @@ use Auth;
 use Closure;
 
 
-
 class IsAdminMiddleware
 {
     /**
@@ -23,8 +22,8 @@ class IsAdminMiddleware
         /*dd(Auth::user());*/
         if (Auth::user()->is_admin) {
             return $next($request);
-       } else
+        } else
 
-            return redirect('/home');
+        return redirect('/')->with('Error','Compte non Administrateur');
     }
 }

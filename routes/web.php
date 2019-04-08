@@ -74,8 +74,8 @@ Route::get('/inscription', "LoginController@inscription");
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function (){
     Route::get('/', "AdminController@index")->name('index')->middleware('admin');
-    Route::resource('/categories', 'CategoryController');
-    Route::resource('/products', 'ProductController');
+    Route::resource('/categories', 'CategoryController')->middleware('admin');
+    Route::resource('/products', 'ProductController')->middleware('admin');
 });
 
 Auth::routes();

@@ -18,6 +18,11 @@
             </div>
 
             <div class="col-auto mr-5">
+                @if(session('Error'))
+                <div class="alert alert-danger">
+                   {{session('Error')}}
+                </div>
+                @endif
                 <nav class="navbar navbar-light bg-primary navbar-expand-lg rounded-pill justify-content-center mb-4 menu">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarTogglerDemo01"
