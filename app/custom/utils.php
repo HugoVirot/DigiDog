@@ -25,8 +25,6 @@ namespace App\custom ;
 
         return $sommeLigne;
     }
-
-
     /**
      * @return array  [ PRODUCT[]  Somme[] total[] qts[] ]
      *
@@ -74,5 +72,14 @@ namespace App\custom ;
         Session::put('panier', $panier);
     }
 
+    /**-------------------------------------------------------------**/
+    function generateKeyOrder(){
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randstring = '';
+        for ($i = 0; $i < 10; $i++) {
+            $randstring .= $characters[rand(0, strlen($characters))];
+        }
+        return $randstring;
+    }
 
 

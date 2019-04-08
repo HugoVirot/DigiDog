@@ -37,7 +37,9 @@
 
                     </th>
                     <th>
-                        <a href="{{route('panier.adresse1')}}" class="btn btn-outline-primary" role="button"  aria-pressed="true">PAYER</a>
+                        <form action=""  method="post">
+                        <a href="{{route('panier.addOrder')}}" class="btn btn-outline-primary" role="button"  aria-pressed="true">PAYER</a>
+                        </form>
                     </th>
                 </tr>
             </table>

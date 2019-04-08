@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 
 use App\Address;
 use function App\custom\arrayToSession;
+use function App\custom\generateKeyOrder;
 use function App\custom\recapPanier;
 use function App\custom\sessionToArray;
 
+use App\Order;
 use App\Product;
 use App\User;
 use Illuminate\Http\Request;
@@ -88,7 +90,6 @@ class CartController extends Controller
     {
         return view("cart.fraisDePort");
     }
-
     public function paiement(Request $request)
     {
         //temporary traitment for price carrier
@@ -97,6 +98,36 @@ class CartController extends Controller
 
         return view("cart.paiement" ,recapPanier($Transporteur_price[$request->input('optradio')]));
     }
+    public function  addOrder(){
+        $Adresses = Address::where('user_id' ,Auth::id())->first();
 
+
+        //Order creation
+        $order = Order::create([
+            'order_num'=> generateKeyOrder(),
+            'date' => Date ::now(),
+            'user_id' => Auth::id(),
+            'address_delivery_id' => $Adresses->id,
+            'address_billing_id' => $Adresses->id,
+            ]);
+        // subOrderS creation
+
+        $basket = sessionToArray();
+        foreach ($basket as $idProduct => $qts){
+            $product = Product::find($idProduct);
+            $order->Product()->attach(product_id,['qts' => $qts, 'price'  => $product->price * $qts]);
+            $subOrder =
+
+        }
+
+        dd($data->id);
+
+
+        $id = DB::table('')->insertGetId(
+            [ 'name' => 'first' ]
+        );
+
+        dd($id);
+   }
 
 }
