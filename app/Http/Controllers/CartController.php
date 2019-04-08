@@ -77,8 +77,8 @@ class CartController extends Controller
 
     public function paiement(Request $request)
     {
-        //temporary traitment for price transporteur
-        $Transporteur_price = [0,6,4,42];
+        //temporary traitment for price carrier
+        $Transporteur_price = [0,8,6,4];
         Session::put('fraisdeport' , $Transporteur_price[$request->input('optradio')]);
 
 
