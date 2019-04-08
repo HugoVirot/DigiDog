@@ -56,7 +56,7 @@ class ProductController extends Controller
 
 
         // flash message
-        $request->session()->flash('state', DigiDogMessageState::$SUCCESS_CART_PRODUIT_ADD);
+        $request->session()->flash('state', __('messages.SUCCESS_CART_PRODUIT_ADD'));
         $request->session()->flash('color', 'bg-secondary');
 
         // redirection

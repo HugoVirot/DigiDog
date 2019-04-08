@@ -3,20 +3,23 @@
 namespace App\Http\Controllers;
 
 
+use App\Address;
 use function App\custom\arrayToSession;
 use function App\custom\recapPanier;
 use function App\custom\sessionToArray;
 
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
 
     public function __construct()
-    {
+    {                                                                       // ??
         $this->middleware('auth')->except('panier', 'identification','removeSessionProduct','recalculePanier');
     }
 
@@ -52,9 +55,20 @@ class CartController extends Controller
     }
     public function identification()
     {
+
+        $Adresses = Address::where('user_id' ,Auth::id())->first();
+
         if (Auth::check()) {
-            return view('cart.adresse1');
+            if ($Adresses){
+
+                return view("cart.fraisDePort");
+            }else{
+
+                return view('cart.adresse1');
+            }
+
         } else {
+
             return view("cart.identification");
         }
     }
@@ -80,9 +94,6 @@ class CartController extends Controller
         //temporary traitment for price carrier
         $Transporteur_price = [0,8,6,4];
         Session::put('fraisdeport' , $Transporteur_price[$request->input('optradio')]);
-
-
-
 
         return view("cart.paiement" ,recapPanier($Transporteur_price[$request->input('optradio')]));
     }
