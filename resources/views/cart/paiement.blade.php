@@ -21,10 +21,9 @@
             <table class="table">
                 <tr>
                     <th>
-
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="Checkbox1"
-                                       value="option3">
+                                       value="option3" checked>
                                 <label class="custom-control-label" for="Checkbox1"></label>
                                 <img class="w-25" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRADPSpvxc9T6Uz1P31xVSoSO8fxtpzmff6ZXHnHj-_bE71D4IHFg">
                             </div>
@@ -35,58 +34,112 @@
                 <tr>
                     <th>
 
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Checkbox2"
-                                       value="option3">
-                                <label class="custom-control-label" for="Checkbox2"></label>
-                                <img class="imgPaiement" src="http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c530.png">
-                            </div>
 
                     </th>
-                    <th>Payer par Paypal</th>
-                </tr>
-                <tr>
                     <th>
-
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Checkbox3"
-                                       value="option3">
-                                <label class="custom-control-label" for="Checkbox3"></label>
-                                <img class="imgPaiement" src="https://particuliers.attijariwafabank-europe.fr/uploads/extra/58e66b0b86da6_cheque_classique.png">
-                            </div>
-
+                        <a href="{{route('panier.adresse1')}}" class="btn btn-outline-primary" role="button"  aria-pressed="true">PAYER</a>
                     </th>
-                    <th>Payer par chèque</th>
                 </tr>
-                <tr>
-                    <th>
-
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Checkbox4"
-                                       value="option3">
-                                <label class="custom-control-label" for="Checkbox4"></label>
-                                <img class="w-25" src="https://www.paytutor.com/img/virement.png">
-                            </div>
-
-                    </th>
-                    <th>Payer par virement</th>
-                </tr>
-
-
-
-
-
-
-
-
-
-
             </table>
+            <div class="row">
+                <div class="col">
+                    Récapitulatif commande
+                </div>
+                @if(count($products ) > 0 )
+                    <nav class="breadcrumb mt-2">
+                        <span class="breadcrumb-item active text-primary">RECAPITULATIF DE COMMANDE</span>
+                        <a class="breadcrumb-item text-dark">IDENTIFICATION</a>
+                        <a class="breadcrumb-item text-dark">ADRESSE</a>
+                        <a class="breadcrumb-item text-dark">FRAIS DE PORT</a>
+                        <a class="breadcrumb-item text-dark">PAIEMENT</a>
+                    </nav>
+                    <div class="row bg-primary text-white justify-content-start py-2">
+                        <div class="col-sm-12 ">
+                            <h1 class="h5 my-auto">COMMANDE</h1>
+                        </div>
+                    </div>
+                    <div class="row mt-3 w-100">
+                        <table class="table ">
+                            <thead class="bg-dark table-bordered">
+                            <tr>
+                                <th class="text-white text-left" scope="col">ARTICLE</th>
+                                <th class="text-white text-center" scope="col">PRIX</th>
+                                <th class="text-white text-center" scope="col">QUANTITE</th>
+                                <th class="text-white text-center" scope="col">TOTAL</th>
+                                <th class="text-white" scope="col"></th>
+                            </tr>
+                            </thead>
 
+                            <tbody>
+                            @foreach($products as $key => $product)
+
+                                <tr class="border-bottom">
+                                    <td>
+                                        <img class="w-25"
+                                             src="{{asset("images/".$product->picture)}}"
+                                             alt="product image">
+                                        <a class="text-decoration-none text-primary"
+                                           href="nom de l'article">{{$product->name}}</a>
+                                    </td>
+
+                                    <td class="text-center">{{$product->price}} €</td>
+
+                                    <td class="text-center">
+                                        <input type="number" step="1" value="{{$qts[$key]}}" name="{{$product->id}}"
+                                               class="form-control"
+                                               min="0" max="100">
+                                    </td>
+
+                                    <td class="text-center">{{$sommesLigne[$key]}} €</td>
+
+                                    <td class="text-center">
+                                        <a href="{{route('panier.remove.product',[$product->id])}}" class="btn btn-danger"
+                                           name="supprimer_produit">
+                                            <i class="far fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="container mb-2">
+
+                        <div class="row">
+                            <div class="col-lg-10 d-flex justify-content-end ">
+                                <h5 class="">Total produit HT: </h5>
+                            </div>
+                            <div class="col-lg-2 d-flex justify-content-end ">
+                                <h3> {{$total}} €</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-10 d-flex justify-content-end ">
+                                <h5 class="">Frais de port: </h5>
+                            </div>
+                            <div class="col-lg-2 d-flex justify-content-end ">
+                                <h3> {{$frais}} €</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-10 d-flex justify-content-end ">
+                                <h5 class="">Total produit TTC: </h5>
+                            </div>
+                            <div class="col-lg-2 d-flex justify-content-end ">
+                                <h3> {{$total + $frais}} €</h3>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            </div>
         </div>
         <div class="row pt-5">
             <div class="col d-flex justify-content-start ">
-                <a href="{{route('panier.adresse2')}}" class="btn btn-outline-primary" role="button"
+                <a href="{{route('panier.adresse1')}}" class="btn btn-outline-primary" role="button"
                    aria-pressed="true">PRECEDENT</a>
             </div>
         </div>

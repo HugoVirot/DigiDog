@@ -16,21 +16,20 @@
         </div>
 
         <div class="row my-5">
-            <div class="col-lg-6 ">
-                <span class="text-primary">CRÉEZ VOTRE COMPTE</span>
-                <p class="mt-3">Saisissez votre adresse mail pour créer votre compte : </p>
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <span class="text-primary">DÉJÀ INSCRIT?</span>
+
                 <form action="{{ route('login') }}" method="post">
 
-
-                    <div>
-                        <button type="submit" name="submitCreationCompte" class="btn btn-primary">CRÉEZ VOTRE COMPTE
+                        <button type="submit" name="submitCreationCompte" class="btn btn-primary w-100">
+                            IDENTIFICATION
                         </button>
-                    </div>
+
                 </form>
             </div>
-            <div class="col-lg-6">
-                <span class="text-primary">DÉJÀ INSCRIT?</span>
-                <a href="{{route('register')}}" class="btn btn-outline-primary" role="button" aria-pressed="true">IDENTIFICATION</a>
+            <div class="col-lg-6 d-flex flex-column ">
+                <span class="text-primary">CRÉEZ VOTRE COMPTE</span>
+                <a href="{{route('register')}}" class="btn btn-outline-primary" role="button" aria-pressed="true">CRÉEZ VOTRE COMPTE</a>
 
             </div>
         </div>
