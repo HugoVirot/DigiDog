@@ -39,7 +39,7 @@
                 <p>Marlene, 33 ans, Tain l'Hermitage.</p>
             </div>
             <div class="col-md-4 text-center align-self-center">
-                <h4>Trés bon gps</h4>
+                <h4>Très bon gps</h4>
                 <p>"Lorsque ma chienne s'est échappée, le tractive a été très rapide à la localiser et je l'ai retrouvée
                     pile à l'endroit où l'indiquait le traceur (à 2 mètres près)."</p>
                 <p>Arthur, 37 ans, Paris</p>

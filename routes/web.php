@@ -73,3 +73,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function (){
 Auth::routes();
 
 
+Route::resource('addresses', 'AddressController');
+
+Route::resource('orders','OrderController');

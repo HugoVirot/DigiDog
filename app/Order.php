@@ -13,7 +13,8 @@ class Order extends Model
 
     public function products()
     {
-        return $this->belongsToMany('App\Product');
+        //relation avec un pivot, relation n n, va direct dans la table order_products
+        return $this->belongsToMany('App\Product')->withPivot('quantity', 'price');
     }
 
     public function addressDelivery()
