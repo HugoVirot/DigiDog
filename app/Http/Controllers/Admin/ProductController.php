@@ -41,7 +41,6 @@ class ProductController extends Controller
     public function store(AjoutProduit $request)
     {
         $validated = $request->validated();
-
         $product = new Product;
         $product->name = $validated['name'];
         $product->picture = $validated['picture'];
@@ -90,8 +89,6 @@ class ProductController extends Controller
     public function update(UpdateProduct $request, Product $product)
     {
         $validated = $request->validated();
-
-        $product = Product::where('id', $product->id)->first();
 
         $product->name = $validated['name'];
         $product->picture = $validated['picture'];

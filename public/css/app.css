@@ -10896,6 +10896,7 @@ body {
 
 .navAdmin {
   box-shadow: 1px 5px 5px #008bcb;
+  height: 58px;
 }
 
 .navbar {

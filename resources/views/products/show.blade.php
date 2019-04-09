@@ -1,7 +1,7 @@
 @extends ('layout.app')
 
 @section('title')
-    wafwaf gps
+    {{ $product->name }}
 @endsection
 
 
@@ -9,27 +9,27 @@
 @section('content')
 
     <div class="container mb-5">
-        <div class="row mb-5">
-            <div class="col-md-6 mt-2">
-                <img src="{{ asset('images/photo_produit.jpeg') }}" class="photo_produit ">
-            </div>
+        <div class="row mb-5 d-flex flex-column justify-content-center align-items-center">
 
-            <div class="col-md-6">
-                <h1>{{ $product->name }}</h1>
-
-                <h3>{{ $product->price }} € + frais de livraison</h3>
-
-                <p>{{ $product->description }}</p>
-                <div class="form-inline">
-                    <input class="form-control mr-3" type="number" id="tentacles" name="tentacles"
-                           min="0" max="50">
-                    <button class="btn btn-primary-bis"  type="button">Ajoutez au panier</button>
+            <form action="{{route('productAddToCart' , [$product])}}" method="post">
+                @csrf
+                <div class="col-sm-12 mt-2 ">
+                    <img src="{{ asset('images/photo_produit.jpeg') }}" class="photo_produit ">
                 </div>
 
+                <div class="col-sm-12 d-flex flex-column justify-content-center align-items-center">
+                    <h1>{{ $product->name }}</h1>
+                    <h3>{{ $product->price }} € + frais de livraison</h3>
+                    <p>{{ $product->description }}</p>
+                    <input class="form-control mr-3" type="number" id="nbProduct" name="nbProduct"
+                           min="0" max="{{$product->stock}}" value="1">
 
-            </div>
+                    <button class="btn btn-primary-bis mt-2" type="submit">Ajoutez au panier</button>
+                </div>
+            </form>
         </div>
     </div>
+
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-4 text-center align-self-center ">
@@ -39,7 +39,7 @@
                 <p>Marlene, 33 ans, Tain l'Hermitage.</p>
             </div>
             <div class="col-md-4 text-center align-self-center">
-                <h4>Trés bon gps</h4>
+                <h4>Très bon gps</h4>
                 <p>"Lorsque ma chienne s'est échappée, le tractive a été très rapide à la localiser et je l'ai retrouvée
                     pile à l'endroit où l'indiquait le traceur (à 2 mètres près)."</p>
                 <p>Arthur, 37 ans, Paris</p>

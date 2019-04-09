@@ -17,73 +17,61 @@
             </div>
         </div>
 
-        <div class="livraison container justify-content-center mt-4 mb-4">
-            <a><strong>Choisissez votre mode de livraison</strong></a>
+        <form action="{{route('panier.paiement')}}" method="post">
+            @csrf
+            <div class="livraison container justify-content-center mt-4 mb-4">
+                <a><strong>Choisissez votre mode de livraison</strong></a>
 
 
-            <a>Choississez une option de livraison pour l'adresse : Mon adresse</a>
+                <a>Choississez une option de livraison pour l'adresse : Mon adresse</a>
 
-            <div class="mt-4 choix container row justify-content-center">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Transport</th>
-                        <th scope="col">Délais</th>
-                        <th scope="col">Prix</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">
-                            <form>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Checkbox1"
-                                           value="option1">
-                                    <label class="custom-control-label" for="Checkbox1">
-                                        <a> transporteur 1</a></label>
-                                    <i class="fas fa-shipping-fast"></i>
+                <div class="mt-4 container row justify-content-center">
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Transport</th>
+                            <th scope="col">Délais</th>
+                            <th scope="col">Prix</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="custom-control radio">
+                                    <label><input type="radio" name="optradio" value="1" checked> Transporteur 1</label>
+                                    <i class="fas fa-shipping-fast ml-4"></i>
                                 </div>
-                            </form>
-                        </th>
-                        <td>3-4 jours</td>
-                        <td>8,00 € HT</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <form>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Checkbox2"
-                                           value="option2">
-                                    <label class="custom-control-label" for="Checkbox2">
-                                        <a> transporteur 1</a></label>
-                                    <i class="fas fa-shipping-fast"></i>
+                            </th>
+                            <td>3-4 jours</td>
+                            <td>8,00 € HT</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div class="custom-control radio">
+                                    <label><input type="radio" name="optradio" value="2"> Transporteur 1</label>
+                                    <i class="fas fa-shipping-fast ml-4"></i>
                                 </div>
-                            </form>
-                        </th>
-                        <td>4-5 jours</td>
-                        <td>6,00 € HT</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <form>
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="Checkbox3"
-                                           value="option3">
-                                    <label class="custom-control-label" for="Checkbox3">
-                                        <a> transporteur 1</a></label>
-                                    <i class="fas fa-shipping-fast"></i>
+                            </th>
+                            <td>4-5 jours</td>
+                            <td>6,00 € HT</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <div class="custom-control radio">
+                                    <label><input class="p-2" type="radio" name="optradio" value="3">  Transporteur 1</label>
+                                    <i class="fas fa-shipping-fast ml-4"></i>
                                 </div>
-                            </form>
-                        </th>
-                        <td>5-7 jours</td>
-                        <td>4,00 € HT</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="custom-control custom-checkbox mb-5">
-                <h1 class="h5">Conditions générales de vente</h1>
-                <form>
+                            </th>
+                            <td>5-7 jours</td>
+                            <td>4,00 € HT</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="custom-control custom-checkbox mb-5">
+                    <h1 class="h5">Conditions générales de vente</h1>
+
                     <input class="custom-control-input" type="checkbox" id="Checkbox4" value="option4">
 
                     <label class="custom-control-label mt-2" for="Checkbox4"> J'ai lu et j'accepte les conditions
@@ -92,11 +80,12 @@
                         vente
                         et j'y adhère sans réserve. <strong>(Lire les Conditions Générales de Vente)</strong> </label>
 
-                    <input type="submit" class="ml-3 btn btn-primary" value="ACCEPTER">
+                    <input type="submit" class="ml-3 btn btn-primary" value="Procéder au Paiement">
 
-                </form>
+
+                </div>
             </div>
-        </div>
+        </form>
         <div class="row pt-3">
             <div class="col d-flex justify-content-start ">
                 <a href="{{route('panier.adresse1')}}" class="btn btn-outline-primary" role="button"
