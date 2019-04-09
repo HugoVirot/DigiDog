@@ -35,7 +35,9 @@
                         <a class="nav-link" href="/">Accueil</a>
                         <a class="nav-link" href="/products">Catalogue</a>
                         <a class="nav-link" href="/panier">Panier</a>
-                        <a class="nav-link" href="/connexion">Connexion</a>
+
+                        <a class="nav-link" href="/login">Connexion</a>
+
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
