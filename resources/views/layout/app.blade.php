@@ -38,6 +38,8 @@
 
                         <a class="nav-link" href="/login">Connexion</a>
 
+
+                        @if(Auth::user())
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,6 +51,8 @@
                                 <a class="dropdown-item" href="/orders">Mes commandes</a>
                             </div>
                         </div>
+                        @endif
+
                         <a class="nav-link" href="/a_propos">A propos</a>
                     </div>
                 </nav>
