@@ -47,7 +47,7 @@ Route::get('/mon_compte', "LoginController@show")->middleware('auth');
 Route::get('/mes_commandes', "LoginController@commandes")->middleware('auth');
 Route::get('/mes_adresses', "LoginController@adresses")->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/login.mes_adresses', 'LoginController@edit')->name('login.mes_adresses')->middleware('auth');
+Route::get('/login.mes_adresses', 'AddressController@edit')->name('login.mes_adresses');
 Route::post('/update.mes_adresses', 'LoginController@update')->name('update.mes_adresses');
 Route::get('/contact', "PageController@contact");
 Route::get('/recrutement', "PageController@recrutement");

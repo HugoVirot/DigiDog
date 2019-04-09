@@ -10865,6 +10865,16 @@ p {
   width: 375px;
 }
 
+.connexion {
+  width: 90%;
+  height: 90%;
+}
+
+.inscription {
+  width: 95%;
+  height: 95%;
+}
+
 #chienordi {
   border-radius: 20px;
 }
