@@ -11,7 +11,7 @@
                 <img class="img-responsive" id="chienniche" src="{{ asset("images/chienniche.jpg") }}">
             </div>
         </article>
-
+        @if ($addresses)
         <div class="row">
             <div class="col-xs-12 col-md-6">
                 <article id="formulaire" class="container mw-100 text-center">
@@ -182,5 +182,8 @@
                 </article>
             </div>
         </div>
+        @else
+            <h1 class="w-100 text-center">Vous n'avez pas d'adresse</h1>
+        @endif
     </main>
 @endsection
