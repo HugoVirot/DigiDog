@@ -90,8 +90,6 @@ class ProductController extends Controller
     {
         $validated = $request->validated();
 
-        $product = Product::where('id', $product->id)->first();
-
         $product->name = $validated['name'];
         $product->picture = $validated['picture'];
         $product->description = $validated['description'];
