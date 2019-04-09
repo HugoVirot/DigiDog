@@ -52,7 +52,9 @@ Route::get('/mon_compte', "LoginController@show");
 
 Route::get('/mes_commandes', "LoginController@commandes");
 
-Route::get('/mes_adresses', "LoginController@adresses");
+Route::get('/mes_adresses', "AddressController@edit")->name('login.mes_adresses');
+
+Route::post('/mes_adresses', 'AddressController@update')->name('login.mes_adresses');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -81,4 +83,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('addresses', 'AddressController');
+//Route::resource('addresses', 'AddressController');
