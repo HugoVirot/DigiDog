@@ -43,11 +43,11 @@ Route::get('/catalogue/{product}', "ProductController@show")->name('voir_Produit
 
 Route::post('/login', "LoginController@index");
 
-Route::get('/mon_compte', "LoginController@show");
+Route::get('/mon_compte', "LoginController@show")->middleware('auth');
 Route::get('/mes_commandes', "LoginController@commandes")->middleware('auth');
 Route::get('/mes_adresses', "LoginController@adresses")->middleware('auth');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/login.mes_adresses', 'LoginController@edit')->name('login.mes_adresses');
+Route::get('/login.mes_adresses', 'LoginController@edit')->name('login.mes_adresses')->middleware('auth');
 Route::post('/update.mes_adresses', 'LoginController@update')->name('update.mes_adresses');
 Route::get('/contact', "PageController@contact");
 Route::get('/recrutement', "PageController@recrutement");

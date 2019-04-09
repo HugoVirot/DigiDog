@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+
+
     <article id="connexion" class="container-fluid mb-3">
         <div class="row justify-content-center">
         <img class="img-responsive" id="connexion" src="{{ asset("images/connexion.jpg") }}">
