@@ -21,12 +21,13 @@
             <table class="table">
                 <tr>
                     <th>
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="Checkbox1"
-                                       value="option3" checked>
-                                <label class="custom-control-label" for="Checkbox1"></label>
-                                <img class="w-25" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRADPSpvxc9T6Uz1P31xVSoSO8fxtpzmff6ZXHnHj-_bE71D4IHFg">
-                            </div>
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" id="Checkbox1"
+                                   value="option3" checked>
+                            <label class="custom-control-label" for="Checkbox1"></label>
+                            <img class="w-25"
+                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRADPSpvxc9T6Uz1P31xVSoSO8fxtpzmff6ZXHnHj-_bE71D4IHFg">
+                        </div>
 
                     </th>
                     <th>Payer par carte bancaire</th>
@@ -37,9 +38,9 @@
 
                     </th>
                     <th>
-                        <form action="{{route('panier.addOrder')}}"  method="post">
+                        <form action="{{route('panier.addOrder')}}" method="post">
                             @csrf
-                        <button type="submit"  class="btn btn-outline-primary" aria-pressed="true">PAYER</button>
+                            <button type="submit" class="btn btn-outline-primary" aria-pressed="true">PAYER</button>
                         </form>
                     </th>
                 </tr>
@@ -49,18 +50,7 @@
                     Récapitulatif commande
                 </div>
                 @if(count($products ) > 0 )
-                    <nav class="breadcrumb mt-2">
-                        <span class="breadcrumb-item active text-primary">RECAPITULATIF DE COMMANDE</span>
-                        <a class="breadcrumb-item text-dark">IDENTIFICATION</a>
-                        <a class="breadcrumb-item text-dark">ADRESSE</a>
-                        <a class="breadcrumb-item text-dark">FRAIS DE PORT</a>
-                        <a class="breadcrumb-item text-dark">PAIEMENT</a>
-                    </nav>
-                    <div class="row bg-primary text-white justify-content-start py-2">
-                        <div class="col-sm-12 ">
-                            <h1 class="h5 my-auto">COMMANDE</h1>
-                        </div>
-                    </div>
+
                     <div class="row mt-3 w-100">
                         <table class="table ">
                             <thead class="bg-dark table-bordered">
@@ -88,15 +78,14 @@
                                     <td class="text-center">{{$product->price}} €</td>
 
                                     <td class="text-center">
-                                        <input type="number" step="1" value="{{$qts[$key]}}" name="{{$product->id}}"
-                                               class="form-control"
-                                               min="0" max="100">
+                                        <span> {{$qts[$key]}}</span>
                                     </td>
 
                                     <td class="text-center">{{$sommesLigne[$key]}} €</td>
 
                                     <td class="text-center">
-                                        <a href="{{route('panier.remove.product',[$product->id])}}" class="btn btn-danger"
+                                        <a href="{{route('panier.remove.product',[$product->id])}}"
+                                           class="btn btn-danger"
                                            name="supprimer_produit">
                                             <i class="far fa-trash-alt"></i>
                                         </a>

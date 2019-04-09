@@ -25,8 +25,8 @@ Route::get('/panier/adresse1','CartController@CreateAdresse1')->name('panier.adr
 Route::get('/panier/creationCompte','CartController@creationCompte')->name('panier.compte');
 Route::get('/panier/fraisDePort','CartController@FraisDePort')->name('panier.FraisDePort');
 Route::post('/panier/paiement','CartController@paiement')->name('panier.paiement')->middleware('auth');
-
 Route::post('/panier/addorder','CartController@addOrder')->name('panier.addOrder')->middleware('auth');
+Route::get('/panier/success','CartController@success')->name('panier.success');
 /*
 Route::get('/panier/adresse2','CartController@adresse2')->name('panier.adresse2');
 

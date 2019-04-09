@@ -7,7 +7,13 @@
 
 
 @section('content')
-
+    @if (session()->has('state'))
+        <div class="{{Session::get('color')}} text-center p-3 mt-5 mb-5 toaster-info d-flex justify-content-center align-content-center">
+            <p>
+            <h3 class="text-light"> {{ Session::get('state') }}</h3></p>
+        </div>
+        {{session()->forget(['state', 'color'])}}
+    @endif
     <div class="container mb-5">
         <div class="row mb-5 d-flex flex-column justify-content-center align-items-center">
 

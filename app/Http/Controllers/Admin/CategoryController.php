@@ -33,19 +33,18 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $request->validate([
-                               'name' => 'required|max:255'
+            'name' => 'required|max:255'
 
-                           ], [
-                               'name.required' => 'Le nom de la Catégorie est obligatoire',
-                               'name.max:255' => 'Le champs ne doit pas depasser 255 caractères'
-                           ]);
-
+        ], [
+            'name.required' => 'Le nom de la Catégorie est obligatoire',
+            'name.max:255' => 'Le champs ne doit pas depasser 255 caractères'
+        ]);
 
 
         $category = new Category();
@@ -54,7 +53,7 @@ class CategoryController extends Controller
 
 
         $categories = Category::all();
-        $request->session()->flash('state', DigiDogMessageState::$SUCCESS_CATEGORY_ADD);
+        $request->session()->flash('state', __('messages.success.category.add'));
         $request->session()->flash('color', 'bg-secondary');
 
         return view('admin.categories.index', ['categories' => $categories]);
@@ -63,7 +62,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -75,7 +74,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Category $category)
@@ -86,8 +85,8 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
@@ -95,16 +94,16 @@ class CategoryController extends Controller
 
 
         $request->validate([
-                               'name' => 'required|max:255'
+            'name' => 'required|max:255'
 
-                           ], [
-                               'name.required' => 'Le nom de la Catégorie est obligatoire',
-                               'name.max:255' => 'Le champs ne doit pas depasser 255 caractères'
-                           ]);
+        ], [
+            'name.required' => 'Le nom de la Catégorie est obligatoire',
+            'name.max:255' => 'Le champs ne doit pas depasser 255 caractères'
+        ]);
 
         $category->name = $request->input('name');
         $category->save();
-        $request->session()->flash('state', DigiDogMessageState::$SUCCESS_CATEGORY_UPDATE);
+        $request->session()->flash('state', __('messages.success.category.update'));
         $request->session()->flash('color', 'bg-secondary');
 
 
@@ -115,7 +114,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, Category $category)
@@ -127,15 +126,15 @@ class CategoryController extends Controller
 
             } catch (\Illuminate\Database\QueryException $e) {
                 $categories = Category::all();
-                $request.session()->flash('state', DigiDogMessageState::$ERROR_CATEGORY);
-                $request.session()->flash('color', 'bg-secondary');
+                $request . session()->flash('state', __('messages.error.category'));
+                $request . session()->flash('color', 'bg-secondary');
                 return view('admin.categories.index', ['categories' => $categories]);
 
 
             }
             $categories = Category::all();
-            $request.session()->flash('state', DigiDogMessageState::$SUCCESS_CATEGORY_DELETE);
-            $request.session()->flash('color', 'bg-secondary');
+            $request . session()->flash('state', __('messages.success.category.delete'));
+            $request . session()->flash('color', 'bg-secondary');
 
             return view('admin.categories.index', ['categories' => $categories]);
 
@@ -144,8 +143,8 @@ class CategoryController extends Controller
 
             $categories = Category::all();
 
-            $request.session()->flash('state', DigiDogMessageState::$ERROR_CATEGORY);
-            $request.session()->flash('color', 'bg-secondary');
+            $request . session()->flash('state', __('messages.error.category'));
+            $request . session()->flash('color', 'bg-secondary');
             return view('admin.categories.index', ['categories' => $categories]);
         }
     }

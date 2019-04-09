@@ -41,7 +41,9 @@ class CartController extends Controller
         }
         arrayToSession($panier);
 
-
+        // flash message
+        session()->flash('state', __('messages.success.cart.remove.Product'));
+        session()->flash('color', 'bg-secondary');
         return redirect('panier');
     }
     public function recalculePanier(Request $request){
@@ -53,7 +55,9 @@ class CartController extends Controller
                $panier[(int)$key] = (int)$line;
         }
         arrayToSession($panier);
-
+        // flash message
+        $request->session()->flash('state', __('messages.success.cart.recalculation'));
+        $request->session()->flash('color', 'bg-secondary');
         return redirect('panier');
     }
     public function identification()
@@ -119,7 +123,15 @@ class CartController extends Controller
             $product = Product::find($idProduct);
             $order->products()->attach($product->id,['quantity' => $qts, 'price'  => $product->price * $qts]);
         }
+        // on vide le panier aprés creation dans la base de données
+        session()->forget('panier');
+
+        return redirect()->route('panier.success');
 
    }
+    public function success(){
+        return view('cart.success');
+    }
+
 
 }

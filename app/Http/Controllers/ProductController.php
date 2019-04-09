@@ -13,12 +13,12 @@ class ProductController extends Controller
         $categories = Category::get();
         $products = Product::get();
 
-        return view('products.index', ['products' => $products , 'categories' => $categories]);
+        return view('products.index', ['products' => $products, 'categories' => $categories]);
     }
 
     public function show(Product $product)
     {
-        return view('products.show' , ['product' => $product]);
+        return view('products.show', ['product' => $product]);
     }
 
     public function addToCart(Request $request, Product $product)
@@ -40,10 +40,10 @@ class ProductController extends Controller
         }
 
         // affectation de l'array à la session
-        $request->session()->put('panier',$panier);
+        $request->session()->put('panier', $panier);
 
         // flash message
-        $request->session()->flash('state', __('messages.SUCCESS_CART_PRODUIT_ADD'));
+        $request->session()->flash('state', __('messages.success.product.add.cart'));
         $request->session()->flash('color', 'bg-secondary');
 
         // redirection

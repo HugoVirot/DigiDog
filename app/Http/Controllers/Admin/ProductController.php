@@ -51,6 +51,9 @@ class ProductController extends Controller
         $product->category_id = $validated['category_id'];
         $product->save();
 
+        $request->session()->flash('state', __('messages.success.product.add'));
+        $request->session()->flash('color', 'bg-secondary');
+
         return redirect()->route('admin.products.index');
     }
 
@@ -98,7 +101,8 @@ class ProductController extends Controller
         $product->stock = $validated['stock'];
         $product->category_id = $validated['category_id'];
         $product->save();
-
+        $request->session()->flash('state', __('messages.success.product.update'));
+        $request->session()->flash('color', 'bg-secondary');
         return redirect()->route('admin.products.index');
     }
 

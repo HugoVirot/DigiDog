@@ -47,8 +47,6 @@ function recapPanier($frais = 0)
     $sommeLigne = calculateLine($products, $allQts);
     // Total de la commande sans les frais de port
     $total = Array_sum($sommeLigne);
-
-
     return ['products' => $products, 'sommesLigne' => $sommeLigne, 'total' => $total, 'qts' => $allQts, 'frais' => $frais];
 }
 
