@@ -36,7 +36,7 @@ function recapPanier($frais = 0)
     // Qts par produits
     $allQts = [];
     $panier = sessionToArray();
-    // recuperer les produits et calculer le prix par ligne
+    // recuperer les produits et calcule le prix par ligne
     foreach ($panier as $product => $qts) {
         array_push($productsKey, $product);
         array_push($allQts, $qts);
