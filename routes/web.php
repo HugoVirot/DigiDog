@@ -47,6 +47,8 @@ Route::get('/mon_compte', "LoginController@show");
 Route::get('/mes_commandes', "LoginController@commandes");
 Route::get('/mes_adresses', "LoginController@adresses");
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login.mes_adresses', 'LoginController@edit')->name('login.mes_adresses');
+Route::post('/update.mes_adresses', 'LoginController@update')->name('update.mes_adresses');
 Route::get('/contact', "PageController@contact");
 Route::get('/recrutement', "PageController@recrutement");
 Route::get('/faq', "PageController@faq");
