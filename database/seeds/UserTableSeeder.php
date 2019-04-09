@@ -12,12 +12,11 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 10; $i++) {
-            $user = new User;
-            $user->name = Str::random(10);
-            $user->email = Str::random(10) . '@domain.com';
-            $user->password = Hash::make('motdepasse');
-            $user->save();
-        }
+        $user = new User;
+        $user->name = "admin";
+        $user->email = "admin@admin.com";
+        $user->password = Hash::make('4lph4-bet4');
+        $user->is_admin = 1;
+        $user->save();
     }
 }
