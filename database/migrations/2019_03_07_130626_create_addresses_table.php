@@ -23,6 +23,8 @@ class CreateAddressesTable extends Migration
             $table->string('city',45);
             $table->string('country',45);
             $table->string('wording',45);
+
+
             $table->bigInteger('user_id', false, true);
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

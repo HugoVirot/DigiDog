@@ -4,11 +4,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 
 class PageController extends Controller
 {
     public function accueil()
     {
+
         return view('pages/welcome');
     }
 

@@ -9,6 +9,18 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('backoffice.index');
+
+        return view('admin.index');
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function admin()
+    {
+        return view('admin');
+    }
+
 }

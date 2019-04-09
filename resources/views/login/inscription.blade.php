@@ -14,7 +14,7 @@
         <h3>C'est parti !</h3>
         <form id="formulaire" method="post">
                 <label class="nomchamp" for="InputEmail">Pseudonyme</label>
-                <input type="email" class="form-control mb-3" id="pseudo" name="pseudo" aria-describedby="emailHelp"
+                <input type="text" class="form-control mb-3" id="pseudo" name="pseudo" aria-describedby="pseudo"
                        placeholder="JeanDupont">
                 <label class="nomchamp" for="InputEmail">Adresse e-mail</label>
                 <input type="email" class="form-control mb-3" id="email" name="email" aria-describedby="emailHelp"

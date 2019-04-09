@@ -9600,7 +9600,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Gets a list of charsets acceptable by the client browser.
          *
-         * @return array List of charsets in preferable order
+         * @return array List of charsets in preferable orders
          * @static 
          */ 
         public static function getCharsets()
@@ -9613,7 +9613,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Gets a list of encodings acceptable by the client browser.
          *
-         * @return array List of encodings in preferable order
+         * @return array List of encodings in preferable orders
          * @static 
          */ 
         public static function getEncodings()
@@ -9626,7 +9626,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Gets a list of content types acceptable by the client browser.
          *
-         * @return array List of content types in preferable order
+         * @return array List of content types in preferable orders
          * @static 
          */ 
         public static function getAcceptableContentTypes()
@@ -15168,7 +15168,7 @@ namespace  {
             }
          
             /**
-             * Add an "order by" clause for a timestamp to the query.
+             * Add an "orders by" clause for a timestamp to the query.
              *
              * @param string $column
              * @return \Illuminate\Database\Eloquent\Builder 
@@ -15181,7 +15181,7 @@ namespace  {
             }
          
             /**
-             * Add an "order by" clause for a timestamp to the query.
+             * Add an "orders by" clause for a timestamp to the query.
              *
              * @param string $column
              * @return \Illuminate\Database\Eloquent\Builder 
@@ -16957,7 +16957,7 @@ namespace  {
             }
          
             /**
-             * Add an "order by" clause to the query.
+             * Add an "orders by" clause to the query.
              *
              * @param string $column
              * @param string $direction
@@ -16972,7 +16972,7 @@ namespace  {
             }
          
             /**
-             * Add a descending "order by" clause to the query.
+             * Add a descending "orders by" clause to the query.
              *
              * @param string $column
              * @return \Illuminate\Database\Query\Builder 
@@ -16985,7 +16985,7 @@ namespace  {
             }
          
             /**
-             * Put the query's results in random order.
+             * Put the query's results in random orders.
              *
              * @param string $seed
              * @return \Illuminate\Database\Query\Builder 
@@ -16998,7 +16998,7 @@ namespace  {
             }
          
             /**
-             * Add a raw "order by" clause to the query.
+             * Add a raw "orders by" clause to the query.
              *
              * @param string $sql
              * @param array $bindings

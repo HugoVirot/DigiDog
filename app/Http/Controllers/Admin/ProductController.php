@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         $products = Product::with('category')->paginate();
 
-        return view('backoffice.products.index', ['products' => $products]);
+        return view('admin.products.index', ['products' => $products]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('backoffice.products.create');
+        return view('admin.products.create');
     }
 
     /**
@@ -41,7 +41,6 @@ class ProductController extends Controller
     public function store(AjoutProduit $request)
     {
         $validated = $request->validated();
-
         $product = new Product;
         $product->name = $validated['name'];
         $product->picture = $validated['picture'];
@@ -51,6 +50,9 @@ class ProductController extends Controller
         $product->stock = $validated['stock'];
         $product->category_id = $validated['category_id'];
         $product->save();
+
+        $request->session()->flash('state', __('messages.success.product.add'));
+        $request->session()->flash('color', 'bg-secondary');
 
         return redirect()->route('admin.products.index');
     }
@@ -65,7 +67,7 @@ class ProductController extends Controller
     {
         $product->load('category');
 
-        return view('backoffice.products.show', ['product' => $product]);
+        return view('admin.products.show', ['product' => $product]);
     }
 
     /**
@@ -77,7 +79,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
 
-        return view('backoffice.products.edit', ['product' => $product]);
+        return view('admin.products.edit', ['product' => $product]);
     }
 
     /**
@@ -91,8 +93,6 @@ class ProductController extends Controller
     {
         $validated = $request->validated();
 
-        $product = Product::where('id', $product->id)->first();
-
         $product->name = $validated['name'];
         $product->picture = $validated['picture'];
         $product->description = $validated['description'];
@@ -101,7 +101,8 @@ class ProductController extends Controller
         $product->stock = $validated['stock'];
         $product->category_id = $validated['category_id'];
         $product->save();
-
+        $request->session()->flash('state', __('messages.success.product.update'));
+        $request->session()->flash('color', 'bg-secondary');
         return redirect()->route('admin.products.index');
     }
 

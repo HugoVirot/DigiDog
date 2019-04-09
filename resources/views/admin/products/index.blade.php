@@ -5,8 +5,9 @@
 @endsection
 
 @section('content')
-    <div class="text-center">
-        <h1>Accueil de la page de création d'un produit</h1>
+
+    <div class="text-center w-100 mt-3">
+        <h1 class="w100 bg-dark text-light text-center">Produits</h1>
     </div>
 
     <div class="text-center mt-3">

@@ -10865,6 +10865,16 @@ p {
   width: 375px;
 }
 
+.connexion {
+  width: 90%;
+  height: 90%;
+}
+
+.inscription {
+  width: 95%;
+  height: 95%;
+}
+
 #chienordi {
   border-radius: 20px;
 }
@@ -10877,5 +10887,123 @@ p {
 
 .formulaire {
   max-width: 100%;
+}
+
+body {
+  background-color: rgba(160, 172, 176, 0.23);
+}
+
+.wrapper-bg-dashboard {
+  z-index: -1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper-bg-dashboard .bg-dashboard {
+  opacity: 0.1;
+}
+
+.navAdmin {
+  box-shadow: 1px 5px 5px #008bcb;
+  height: 58px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.nav-link i {
+  position: relative;
+  font-size: 25px;
+  top: 8px;
+  right: 23px;
+}
+
+.nav-link i:hover {
+  position: relative;
+  color: #59114d;
+}
+
+.nav-item:hover {
+  background-color: #7fd6ff;
+}
+
+.logo-nav {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  right: 25px;
+}
+
+.vapor {
+  position: fixed;
+  opacity: 0.15;
+  font-size: 228px;
+  color: #009ce5;
+  z-index: 0;
+}
+
+/*  ****  CARD ****  */
+
+.card-admin:hover {
+  background-color: #00adfe;
+  color: white;
+}
+
+.card-admin:hover i:not(:hover) {
+  color: white;
+}
+
+i:hover {
+  color: white;
+}
+
+.admin-fa-color {
+  color: #009ce5;
+}
+
+.admin-fa-color:hover {
+  color: white;
+}
+
+.a-no-decoration {
+  text-decoration: none !important;
+  transition: 0.3s;
+}
+
+.big-icon {
+  padding: 5px;
+  font-size: 100px;
+  color: #009ce5;
+}
+
+.toaster-info {
+  opacity: 0;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+  -webkit-animation-name: getOut;
+          animation-name: getOut;
+}
+
+@-webkit-keyframes getOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes getOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
